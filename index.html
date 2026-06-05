@@ -1,0 +1,3859 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>富山県観光ウェブアンケート月次レポート｜令和8年5月</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --ink: #0d1b2a;
+    --ink-soft: #2c3e50;
+    --sub: #6c7a89;
+    --paper: #f6f9fa;
+    --paper-card: #ffffff;
+    --rule: #c9d6db;
+    --rule-soft: #e1eaee;
+    --primary: #1d4e6f;
+    --primary-deep: #0e3550;
+    --primary-soft: #3a7194;
+    --teal: #2d7a7a;
+    --teal-deep: #1a5454;
+    --teal-soft: #5fa8a8;
+    --teal-mist: #b8d8d8;
+    --gold: #b08840;
+    --warn: #c0563c;
+    --positive: #2d7a7a;
+    --paper-accent: #e8f1f3;
+    --paper-tint: #d8e6eb;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.85;
+    font-feature-settings: "palt";
+    font-size: 15px;
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(29,78,111,0.05) 0%, transparent 40%),
+      radial-gradient(circle at 80% 80%, rgba(45,122,122,0.05) 0%, transparent 40%);
+  }
+
+  /* ===== ヘッダー ===== */
+  .report-header {
+    background: linear-gradient(135deg, var(--ink) 0%, var(--primary-deep) 60%, var(--teal-deep) 100%);
+    color: var(--paper);
+    padding: 70px 60px 60px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 6px solid var(--teal);
+  }
+  .report-header::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 360px;
+    height: 100%;
+    background:
+      linear-gradient(135deg, transparent 40%, rgba(95,168,168,0.18) 50%, transparent 60%),
+      linear-gradient(45deg, transparent 40%, rgba(176,136,64,0.10) 50%, transparent 60%);
+    pointer-events: none;
+  }
+  .header-tag {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.4em;
+    color: var(--teal-mist);
+    margin-bottom: 14px;
+    border-left: 2px solid var(--teal-soft);
+    padding-left: 12px;
+  }
+  .header-title {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 1.35;
+    margin-bottom: 14px;
+    letter-spacing: 0.02em;
+  }
+  .header-title .accent { color: var(--teal-mist); }
+  .header-subtitle {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: rgba(246,249,250,0.92);
+    margin-bottom: 30px;
+    letter-spacing: 0.06em;
+    line-height: 1.6;
+  }
+  .header-subtitle .accent { color: var(--teal-mist); font-weight: 500; }
+  .header-meta {
+    display: flex;
+    gap: 40px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(246,249,250,0.15);
+    font-size: 13px;
+    color: rgba(246,249,250,0.7);
+    letter-spacing: 0.1em;
+    flex-wrap: wrap;
+  }
+  .header-meta strong { color: var(--paper); font-weight: 500; margin-right: 8px; }
+
+  .container { max-width: 1180px; margin: 0 auto; padding: 60px; }
+  section { margin-bottom: 80px; }
+
+  .section-label {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.5em;
+    color: var(--teal);
+    margin-bottom: 8px;
+  }
+  .section-title {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 8px;
+    line-height: 1.3;
+    letter-spacing: 0.02em;
+  }
+  .section-lede {
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin-bottom: 36px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--rule);
+    max-width: 900px;
+    line-height: 1.9;
+  }
+
+  h3.sub-title {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 40px 0 18px;
+    padding-left: 14px;
+    border-left: 4px solid var(--teal);
+    line-height: 1.4;
+  }
+  p { margin-bottom: 16px; color: var(--ink-soft); }
+  p.lead { font-size: 16px; color: var(--ink); line-height: 1.95; }
+
+  /* KPIカード */
+  .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-bottom: 50px; }
+  .kpi-card { background: var(--paper-card); border: 1px solid var(--rule); padding: 24px 22px 22px; position: relative; overflow: hidden; }
+  .kpi-card::before { content: ''; position: absolute; top: 0; left: 0; width: 40px; height: 3px; background: var(--teal); }
+  .kpi-label { font-size: 11px; letter-spacing: 0.2em; color: var(--sub); margin-bottom: 12px; font-weight: 500; }
+  .kpi-value { font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 38px; font-weight: 700; color: var(--primary-deep); line-height: 1; margin-bottom: 8px; letter-spacing: -0.02em; }
+  .kpi-value .unit { font-size: 16px; color: var(--sub); font-weight: 500; margin-left: 4px; }
+  .kpi-value.small { font-size: 22px; }
+  .kpi-note { font-size: 12px; color: var(--sub); line-height: 1.6; }
+
+  /* サマリーボックス */
+  .summary-box { background: linear-gradient(135deg, var(--paper-card) 0%, var(--paper-accent) 100%); border: 1px solid var(--rule); padding: 36px 40px; margin: 40px 0; position: relative; }
+  .summary-box::before { content: '要旨'; position: absolute; top: -12px; left: 30px; background: var(--teal); color: var(--paper); font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 13px; letter-spacing: 0.3em; padding: 4px 16px; }
+  .summary-box ol { list-style: none; counter-reset: summary; margin-top: 8px; }
+  .summary-box li { counter-increment: summary; padding: 14px 0 14px 50px; position: relative; border-bottom: 1px dashed var(--rule); line-height: 1.85; color: var(--ink-soft); }
+  .summary-box li:last-child { border-bottom: none; }
+  .summary-box li::before { content: counter(summary, decimal-leading-zero); position: absolute; left: 0; top: 14px; font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 700; color: var(--teal); font-size: 22px; line-height: 1; }
+  .summary-box strong { color: var(--ink); font-weight: 700; background: linear-gradient(transparent 70%, rgba(95,168,168,0.35) 70%); padding: 0 2px; }
+
+  /* チャート */
+  .chart-block { background: var(--paper-card); border: 1px solid var(--rule); padding: 30px 32px 28px; margin: 24px 0; }
+  .chart-block h5 { font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 4px; padding-bottom: 12px; border-bottom: 1px solid var(--rule-soft); }
+  .chart-block .chart-note { font-size: 11px; color: var(--sub); margin-bottom: 16px; padding-top: 4px; }
+  .chart-wrap { position: relative; height: 320px; }
+  .chart-wrap.tall { height: 400px; }
+  .chart-wrap.short { height: 240px; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin: 24px 0; }
+  .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 24px 0; }
+
+  /* クロス分析カード */
+  .attr-grid-gender { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .attr-card { background: var(--paper-card); border: 1px solid var(--rule); padding: 24px 26px; position: relative; }
+  .attr-card-header { display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 14px; margin-bottom: 16px; border-bottom: 1px solid var(--rule-soft); }
+  .attr-card-title { font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 18px; font-weight: 700; color: var(--ink); }
+  .attr-card-n { font-size: 11px; color: var(--sub); letter-spacing: 0.1em; }
+  .attr-card.female .attr-card-title { color: var(--teal-deep); }
+  .attr-card.male .attr-card-title { color: var(--primary-deep); }
+
+  .theme-list { list-style: none; margin: 0; }
+  .theme-list li { display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px dotted var(--rule-soft); font-size: 13px; }
+  .theme-list li:last-child { border-bottom: none; }
+  .theme-list .theme-name { color: var(--ink); }
+  .theme-list .theme-count { color: var(--sub); font-variant-numeric: tabular-nums; font-size: 12px; }
+  .theme-list .theme-bar { width: 90px; height: 6px; background: var(--rule-soft); position: relative; overflow: hidden; }
+  .theme-list .theme-bar-fill { position: absolute; left: 0; top: 0; height: 100%; background: var(--primary); }
+  .attr-card.female .theme-bar-fill { background: var(--teal); }
+  .attr-card.male .theme-bar-fill { background: var(--primary); }
+
+  /* 引用 */
+  .quotes { margin: 18px 0 6px; padding: 18px 22px; background: var(--paper-accent); border-left: 3px solid var(--primary); }
+  .quotes.female { border-left-color: var(--teal); background: linear-gradient(90deg, rgba(95,168,168,0.10), transparent 80%); }
+  .quotes.male { border-left-color: var(--primary); background: linear-gradient(90deg, rgba(58,113,148,0.10), transparent 80%); }
+  .quotes-title { font-size: 11px; letter-spacing: 0.2em; color: var(--primary); margin-bottom: 10px; font-weight: 700; }
+  .quotes.female .quotes-title { color: var(--teal-deep); }
+  .quotes.male .quotes-title { color: var(--primary-deep); }
+  .quotes ul { list-style: none; }
+  .quotes li { padding: 6px 0 6px 18px; position: relative; color: var(--ink-soft); font-size: 13.5px; line-height: 1.75; font-family: 'Zen Kaku Gothic New', sans-serif; }
+  .quotes li::before { content: '「'; position: absolute; left: 0; top: 4px; color: var(--primary); font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 700; }
+  .quotes li::after { content: '」'; color: var(--primary); font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 700; }
+  .quotes.female li::before, .quotes.female li::after { color: var(--teal-deep); }
+  .quotes.male li::before, .quotes.male li::after { color: var(--primary-deep); }
+
+  /* 年代・同行者カード */
+  .age-row { display: grid; grid-template-columns: 180px 1fr 1.3fr; gap: 24px; padding: 26px 28px; background: var(--paper-card); border: 1px solid var(--rule); margin-bottom: 18px; align-items: start; }
+  .age-row-label { border-right: 1px solid var(--rule-soft); padding-right: 20px; }
+  .age-row-title { font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 26px; font-weight: 700; color: var(--ink); margin-bottom: 6px; line-height: 1.1; }
+  .age-row-n { font-size: 11px; color: var(--sub); letter-spacing: 0.1em; margin-bottom: 16px; }
+  .age-row-bar { background: var(--rule-soft); height: 4px; position: relative; }
+  .age-row-bar-fill { position: absolute; height: 100%; background: var(--primary); top: 0; left: 0; }
+
+  /* アクション提案 */
+  .action-section { background: linear-gradient(135deg, var(--ink) 0%, var(--primary-deep) 100%); color: var(--paper); margin: 60px -60px 0; padding: 80px 60px 90px; position: relative; }
+  .action-section .container { padding: 0; max-width: 1060px; }
+  .action-section .section-label { color: var(--teal-mist); }
+  .action-section .section-title { color: var(--paper); }
+  .action-section .section-lede { color: rgba(246,249,250,0.7); border-bottom-color: rgba(246,249,250,0.15); }
+
+  .action-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 30px; }
+  .action-card { background: rgba(246,249,250,0.04); border: 1px solid rgba(246,249,250,0.15); padding: 28px 28px 24px; position: relative; }
+  .action-num { font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 13px; color: var(--teal-soft); letter-spacing: 0.3em; margin-bottom: 10px; }
+  .action-title { font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 20px; font-weight: 700; color: var(--paper); margin-bottom: 14px; line-height: 1.4; }
+  .action-body { font-size: 13.5px; color: rgba(246,249,250,0.8); line-height: 1.85; }
+  .action-body strong { color: var(--teal-mist); font-weight: 500; }
+  .action-target { margin-top: 14px; padding-top: 14px; border-top: 1px dashed rgba(246,249,250,0.2); font-size: 11px; color: rgba(246,249,250,0.55); letter-spacing: 0.15em; }
+  .action-target strong { color: var(--teal-soft); font-weight: 500; margin-right: 6px; }
+
+  /* フッター */
+  .report-footer { text-align: center; padding: 50px 30px 60px; font-size: 12px; color: var(--sub); letter-spacing: 0.15em; background: var(--paper); }
+  .report-footer .footer-mark { font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 16px; color: var(--teal); margin-bottom: 12px; letter-spacing: 0.3em; }
+
+  /* 目次 */
+  .toc { background: var(--paper-card); border: 1px solid var(--rule); padding: 28px 36px; margin-bottom: 50px; }
+  .toc-title { font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 13px; letter-spacing: 0.4em; color: var(--teal); margin-bottom: 18px; padding-bottom: 12px; border-bottom: 1px solid var(--rule-soft); }
+  .toc ol { list-style: none; counter-reset: toc; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 30px; }
+  .toc li { counter-increment: toc; position: relative; padding: 4px 0 4px 40px; }
+  .toc li::before { content: counter(toc, decimal-leading-zero); position: absolute; left: 0; top: 4px; font-family: 'Zen Kaku Gothic New', sans-serif; color: var(--teal); font-weight: 700; font-size: 13px; letter-spacing: 0.1em; }
+  .toc a { color: var(--ink-soft); text-decoration: none; font-size: 14px; border-bottom: 1px solid transparent; transition: all 0.2s; }
+  .toc a:hover { color: var(--teal); border-bottom-color: var(--teal); }
+
+  /* ハイライトカード */
+  .highlight-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 26px 0; }
+  .highlight-card { background: var(--paper-card); border: 1px solid var(--rule); padding: 26px 24px; position: relative; }
+  .highlight-rank { position: absolute; top: 18px; right: 22px; font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 36px; color: var(--teal-mist); font-weight: 700; line-height: 1; opacity: 0.7; }
+  .highlight-rank.gold { color: var(--gold); opacity: 0.7; }
+  .highlight-title { font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 18px; font-weight: 700; color: var(--ink); margin-bottom: 6px; margin-right: 50px; line-height: 1.3; }
+  .highlight-count { font-size: 12px; color: var(--sub); margin-bottom: 12px; letter-spacing: 0.05em; }
+  .highlight-count .num { font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 18px; color: var(--teal-deep); font-weight: 700; margin-right: 4px; }
+  .highlight-body { font-size: 13px; color: var(--ink-soft); line-height: 1.8; }
+
+  .chapter-divider { text-align: center; margin: 80px 0 50px; position: relative; }
+  .chapter-divider::before, .chapter-divider::after { content: ''; position: absolute; top: 50%; width: calc(50% - 80px); height: 1px; background: var(--rule); }
+  .chapter-divider::before { left: 0; }
+  .chapter-divider::after { right: 0; }
+  .chapter-divider span { font-family: 'Zen Kaku Gothic New', sans-serif; color: var(--teal); letter-spacing: 0.4em; font-size: 12px; }
+
+  /* ===== サイドバー関連（新規追加） ===== */
+  .sidebar-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: var(--teal);
+    color: var(--paper);
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    transition: background 0.3s, transform 0.3s;
+  }
+  .sidebar-toggle:hover {
+    background: var(--teal-deep);
+    transform: scale(1.05);
+  }
+  .sidebar-toggle .icon-bar {
+    width: 22px;
+    height: 2px;
+    background: var(--paper);
+    transition: 0.3s;
+  }
+  .sidebar-toggle .toggle-text {
+    font-size: 10px;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    letter-spacing: 0.1em;
+    margin-top: 2px;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    right: -320px;
+    width: 320px;
+    height: 100%;
+    background: var(--paper-card);
+    box-shadow: -4px 0 15px rgba(0,0,0,0.1);
+    z-index: 1002;
+    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  .sidebar.open {
+    right: 0;
+  }
+
+  .sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px;
+    border-bottom: 1px solid var(--rule-soft);
+    background: var(--paper-accent);
+  }
+  .sidebar-header .sidebar-title {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--teal);
+    letter-spacing: 0.3em;
+  }
+  .sidebar-close {
+    background: none;
+    border: none;
+    font-size: 32px;
+    color: var(--sub);
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+  }
+  .sidebar-close:hover {
+    color: var(--ink);
+  }
+
+  .sidebar-nav {
+    padding: 20px 24px;
+  }
+  .sidebar-nav ol {
+    list-style: none;
+    counter-reset: sidebar-toc;
+  }
+  .sidebar-nav li {
+    position: relative;
+    padding: 12px 0 12px 36px;
+    border-bottom: 1px dotted var(--rule-soft);
+  }
+  .sidebar-nav li:last-child {
+    border-bottom: none;
+  }
+  .sidebar-nav li::before {
+    counter-increment: sidebar-toc;
+    content: counter(sidebar-toc, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 13px;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    color: var(--teal-soft);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+  }
+  .sidebar-nav a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    transition: color 0.2s;
+  }
+  .sidebar-nav a:hover {
+    color: var(--teal);
+  }
+
+  .sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 27, 42, 0.4);
+    z-index: 1001;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+  .sidebar-overlay.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @media (max-width: 880px) {
+    .container { padding: 40px 22px; }
+    .report-header { padding: 50px 24px 40px; }
+    .header-title { font-size: 26px; }
+    .header-subtitle { font-size: 15px; }
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    .attr-grid-gender, .two-col { grid-template-columns: 1fr; }
+    .three-col, .highlight-grid, .action-cards { grid-template-columns: 1fr; }
+    .age-row { grid-template-columns: 1fr; }
+    .age-row-label { border-right: none; border-bottom: 1px solid var(--rule-soft); padding-bottom: 12px; padding-right: 0; }
+    .toc ol { grid-template-columns: 1fr; }
+    .action-section { margin: 40px -22px 0; padding: 50px 24px; }
+    .header-meta { flex-direction: column; gap: 10px; }
+
+    /* スマホ時のサイドバーボタン調整 */
+    .sidebar-toggle {
+      bottom: 20px;
+      right: 20px;
+      width: 54px;
+      height: 54px;
+    }
+    .sidebar-toggle .icon-bar { width: 18px; }
+    .sidebar-toggle .toggle-text { font-size: 9px; }
+    .sidebar { width: 280px; }
+  }
+  @media print {
+    body { background: white; }
+    .chart-block, .attr-card, .kpi-card { break-inside: avoid; }
+    section { break-inside: avoid-page; }
+    /* 印刷時はサイドバー関連を非表示 */
+    .sidebar-toggle, .sidebar, .sidebar-overlay { display: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<button id="sidebarToggle" class="sidebar-toggle" aria-label="目次を開く">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="toggle-text">目次</span>
+</button>
+
+<div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+<aside id="sidebar" class="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-title">目　次</div>
+    <button id="sidebarClose" class="sidebar-close" aria-label="閉じる">×</button>
+  </div>
+  <nav class="sidebar-nav">
+    <ol>
+      <li><a href="#chap1">5月の概況と要旨</a></li>
+      <li><a href="#chap2">回答者プロフィール</a></li>
+      <li><a href="#chap3">5月を彩るトピック</a></li>
+      <li><a href="#chap4">性別で見る感動と課題</a></li>
+      <li><a href="#chap5">年代で見る感動と課題</a></li>
+      <li><a href="#chap6">同行者で見る感動と課題</a></li>
+      <li><a href="#chap7">アクション提案</a></li>
+    </ol>
+  </nav>
+</aside>
+<header class="report-header">
+  <div class="header-tag">TOYAMA TOURISM WEB SURVEY ｜ MONTHLY REPORT</div>
+  <h1 class="header-title">富山県観光ウェブアンケート<br>令和8年5月分　月次レポート</h1>
+  <p class="header-subtitle">残雪輝く、立山と富山湾の初夏<span class="accent"> 「雪の回廊・春の海の幸」の月。</span></p>
+  <div class="header-meta">
+    <span><strong>集計期間</strong>令和8年5月</span>
+    <span><strong>有効回答数</strong>n＝1,945件</span>
+    <span><strong>調査主体</strong>公益社団法人とやま観光推進機構</span>
+    <span><strong>発行</strong>令和8年6月</span>
+  </div>
+</header>
+
+<div class="container">
+
+  <nav class="toc">
+    <div class="toc-title">目　次</div>
+    <ol>
+      <li><a href="#chap1">5月の概況と要旨</a></li>
+      <li><a href="#chap2">回答者プロフィール</a></li>
+      <li><a href="#chap3">5月を彩るトピック</a></li>
+      <li><a href="#chap4">性別で見る感動と課題</a></li>
+      <li><a href="#chap5">年代で見る感動と課題</a></li>
+      <li><a href="#chap6">同行者で見る感動と課題</a></li>
+      <li><a href="#chap7">アクション提案</a></li>
+    </ol>
+  </nav>
+
+  <section id="chap1">
+    <div class="section-label">CHAPTER 01</div>
+    <h2 class="section-title">5月の概況と要旨</h2>
+    <p class="section-lede">本月の有効回答数は1,945件。回答者の84.9％を県外居住者が占め、平均年齢は54.0歳と、本県観光の中核をなす成熟層の関心がデータに色濃く表れた。食では富山湾の旬を象徴する寿司・ホタルイカ・白えびが上位を分け合い、観光では開通直後の立山黒部アルペンルート「雪の大谷」が最多を記録。残雪の立山連峰と春の海の幸を同時に楽しめる、本県ならではの季節の魅力が鮮明となった。</p>
+
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-label">有効回答数</div>
+        <div class="kpi-value">1,945<span class="unit">件</span></div>
+        <div class="kpi-note">県外居住者が84.9％を占める</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">県外来訪者比率</div>
+        <div class="kpi-value">84.9<span class="unit">%</span></div>
+        <div class="kpi-note">県外1,652件／県内293件</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">最多自由記述テーマ（食）</div>
+        <div class="kpi-value">寿司・刺身</div>
+        <div class="kpi-note">438件／寿司276件、ホタルイカ242件・白えび223件が拮抗</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">最多自由記述テーマ（観光）</div>
+        <div class="kpi-value small">雪の大谷・立山黒部</div>
+        <div class="kpi-note">180件／立山連峰の眺望183件、チューリップ93件が続く</div>
+      </div>
+    </div>
+
+    <div class="summary-box">
+      <ol>
+        
+        <li>有効回答<strong>1,945件</strong>のうち県外居住者が<strong>84.9％</strong>を占め、平均年齢は<strong>54.0歳</strong>。<strong>50代（29.6％）と60代（27.8％）</strong>が二本柱で、40代以上が全体の<strong>83.8％</strong>に達する成熟層中心の構成となった。</li>
+        
+        <li>食の感動は富山湾の海の幸に集中。<strong>寿司・鮨（276件）</strong>を筆頭に、<strong>ホタルイカ（242件）</strong>と<strong>白えび（223件）</strong>が拮抗し、春から初夏へと移ろう富山湾の旬が回答の中核を形成した。</li>
+        
+        <li>観光・体験では、開通直後の<strong>立山黒部アルペンルート「雪の大谷」（208件）</strong>が最多。<strong>立山連峰の眺望（雨晴海岸ほか183件）</strong>、<strong>となみチューリップ（93件）</strong>が続き、残雪・新緑・春の花が共存する景観が支持された。</li>
+        
+        <li>同行形態は<strong>夫婦（39.1％）</strong>が突出し、カップルと合わせて<strong>43.5％</strong>。大人の家族（19.5％）、ひとり旅（12.0％）が続く一方、子連れ家族は計<strong>12.1％</strong>にとどまり、大人中心の旅が主流であった。</li>
+        
+        <li>不便・困りごとでは<strong>二次交通・公共交通の不便（自由記述840件中150件、17.9％）</strong>が群を抜いて多く、本県観光の最重要課題として改めて浮き彫りとなった。飲食店の混雑・予約、駐車場がこれに続く。</li>
+        
+      </ol>
+    </div>
+  </section>
+
+  <section id="chap2">
+    <div class="section-label">CHAPTER 02</div>
+    <h2 class="section-title">回答者プロフィール</h2>
+    <p class="section-lede">本章では回答者の属性を概観する。県外比率は<strong>84.9％</strong>と高く、富山が広域からの目的地として選ばれている実態がうかがえる。年齢構成は50〜60代を中心とした成熟層に大きく傾き、同行者は夫婦旅が最多。落ち着いた大人の旅が本月の基調をなしている。</p>
+
+    <div class="two-col">
+      <div class="chart-block">
+        <h5>居住地（地域ブロック別）</h5>
+        <div class="chart-note">富山県内15.1％に対し、東京・愛知・大阪など県外が84.9％</div>
+        <div class="chart-wrap"><canvas id="chartRegion"></canvas></div>
+      </div>
+      <div class="chart-block">
+        <h5>性別</h5>
+        <div class="chart-note">女性58.4％・男性40.6％で、女性がやや優勢</div>
+        <div class="chart-wrap"><canvas id="chartGender"></canvas></div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="chart-block">
+        <h5>年代分布</h5>
+        <div class="chart-note">50代29.6％・60代27.8％が二本柱。40代以上で83.8％</div>
+        <div class="chart-wrap"><canvas id="chartAge"></canvas></div>
+      </div>
+      <div class="chart-block">
+        <h5>同行者構成</h5>
+        <div class="chart-note">夫婦39.1％が突出。子連れ家族は計12.1％にとどまる</div>
+        <div class="chart-wrap"><canvas id="chartCompanion"></canvas></div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="chart-block">
+        <h5>県内宿泊数</h5>
+        <div class="chart-note">1泊46.5％が最多、2泊21.8％。3泊以上も計11.0％</div>
+        <div class="chart-wrap short"><canvas id="chartStay"></canvas></div>
+      </div>
+      <div class="chart-block">
+        <h5>宿泊先（市町村別・延べ件数）</h5>
+        <div class="chart-note">富山市が最多。氷見・高岡・砺波・黒部など湾岸・立山麓に分散</div>
+        <div class="chart-wrap short"><canvas id="chartStayLoc"></canvas></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="chap3">
+    <div class="section-label">CHAPTER 03</div>
+    <h2 class="section-title">5月を彩るトピック</h2>
+    <p class="section-lede">本章では、自由記述から抽出した「食」「観光・体験」「困りごと」の3軸でテーマを集計し、本月の関心の所在を読み解く。富山湾の旬と立山の絶景が、回答者の感動の源泉となっていることが鮮明である。</p>
+
+    <h3 class="sub-title">春の海の幸 ― 富山湾の旬が回答の中核を占める</h3>
+    <div class="chart-block">
+      <h5>「最も幸せに感じた食べ物」テーマ別言及件数</h5>
+      <div class="chart-note">複数キーワードを含む回答は重複カウント／有効回答1,460件中</div>
+      <div class="chart-wrap tall"><canvas id="chartFood"></canvas></div>
+    </div>
+
+    <div class="highlight-grid">
+      
+      <div class="highlight-card">
+        <div class="highlight-rank gold">壱</div>
+        <div class="highlight-title">寿司・鮨</div>
+        <div class="highlight-count"><span class="num">276</span>件の言及</div>
+        <div class="highlight-body">富山湾の新鮮な魚を握る寿司が食回答の核。白えびやホタルイカを用いた一貫を挙げる声も多く、ネタの鮮度と多彩さが感動につながっている。</div>
+      </div>
+      
+      <div class="highlight-card">
+        <div class="highlight-rank gold">弐</div>
+        <div class="highlight-title">ホタルイカ</div>
+        <div class="highlight-count"><span class="num">242</span>件の言及</div>
+        <div class="highlight-body">春の富山湾を象徴する味覚。刺身・しゃぶしゃぶ・塩辛など調理の幅広さが支持され、季節限定の希少性が旅の満足度を高めている。</div>
+      </div>
+      
+      <div class="highlight-card">
+        <div class="highlight-rank gold">参</div>
+        <div class="highlight-title">白えび</div>
+        <div class="highlight-count"><span class="num">223</span>件の言及</div>
+        <div class="highlight-body">「富山湾の宝石」と称される白えび。漁が本格化する初夏に向けて存在感を増し、刺身や天ぷら、寿司で味わう声が相次いだ。</div>
+      </div>
+      
+    </div>
+
+    <h3 class="sub-title">残雪と新緑 ― 「雪の大谷」と立山連峰の眺望</h3>
+    <div class="chart-block">
+      <h5>「最も幸せに感じた観光地・体験」テーマ別言及件数</h5>
+      <div class="chart-note">複数キーワードを含む回答は重複カウント／有効回答1,387件中</div>
+      <div class="chart-wrap tall"><canvas id="chartSight"></canvas></div>
+    </div>
+
+    <div class="highlight-grid">
+      
+      <div class="highlight-card">
+        <div class="highlight-rank">雪</div>
+        <div class="highlight-title">立山黒部アルペンルート・雪の大谷</div>
+        <div class="highlight-count"><span class="num">208</span>件の言及</div>
+        <div class="highlight-body">開通直後の「雪の大谷」が観光回答の最多。十数メートルに及ぶ雪の壁の迫力が、本月を代表する絶景として圧倒的な支持を集めた。</div>
+      </div>
+      
+      <div class="highlight-card">
+        <div class="highlight-rank">峰</div>
+        <div class="highlight-title">立山連峰の眺望（雨晴海岸ほか）</div>
+        <div class="highlight-count"><span class="num">183</span>件の言及</div>
+        <div class="highlight-body">澄んだ春空に映える立山連峰。雨晴海岸からの「海越しの立山」をはじめ、富山湾と3000m級の山並みが織りなす景観が高く評価された。</div>
+      </div>
+      
+      <div class="highlight-card">
+        <div class="highlight-rank">花</div>
+        <div class="highlight-title">となみチューリップ</div>
+        <div class="highlight-count"><span class="num">93</span>件の言及</div>
+        <div class="highlight-body">大型連休に合わせて見頃を迎えたチューリップ。色とりどりの花畑が春の彩りを添え、連休後半まで来訪者の心を捉えた。</div>
+      </div>
+      
+    </div>
+
+    <p class="lead" style="margin-top: 24px;">本月は、富山湾の海の幸（寿司・ホタルイカ・白えび）と立山の絶景（雪の大谷・立山連峰）という<strong>「山と海」の二大魅力</strong>が同時に支持を集めた点が特徴である。春の花から初夏の味覚へと季節が移ろう端境期にあって、本県は多層的な観光資源で来訪者を惹きつけている。</p>
+  </section>
+
+  <div class="chapter-divider"><span>属 性 別 ・ 詳 細 分 析</span></div>
+
+  <section id="chap4">
+    <div class="section-label">CHAPTER 04</div>
+    <h2 class="section-title">性別で見る感動と課題</h2>
+    <p class="section-lede">本章では性別による傾向の差をみる。回答者は女性58.4％・男性40.6％で女性がやや優勢。食では白えびや日本酒・地酒で女性の言及がやや高く、観光では温泉や美術館・ガラス関連で女性の関心が相対的に強い。一方、寿司は男性の言及がわずかに上回るなど、嗜好の濃淡が確認された。</p>
+
+    
+
+    
+    <h3 class="sub-title">① ポジティブな感動 ― 観光・体験</h3>
+    <div class="attr-grid-gender">
+      
+      
+      <div class="attr-card female">
+        <div class="attr-card-header">
+          <div class="attr-card-title">女性</div>
+          <div class="attr-card-n">n = 1136</div>
+        </div>
+        
+        
+        
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">雪の大谷・立山黒部</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%"></span></span>
+            <span class="theme-count">112件 / 9.9%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">雨晴海岸</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:62%"></span></span>
+            <span class="theme-count">69件 / 6.1%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">温泉</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:58%"></span></span>
+            <span class="theme-count">65件 / 5.7%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">チューリップフェア・砺波</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:56%"></span></span>
+            <span class="theme-count">63件 / 5.5%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">立山連峰の眺望</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:41%"></span></span>
+            <span class="theme-count">47件 / 4.1%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">黒部峡谷・宇奈月</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:37%"></span></span>
+            <span class="theme-count">42件 / 3.7%</span>
+          </li>
+          
+        </ul>
+        
+        <div class="quotes female">
+          <div class="quotes-title">感動の声</div>
+          <ul>
+            
+            <li>黒部ダムやそこに向かうまでのケーブルカーやロープウェイ、室堂からの眺めなど最高でした</li>
+            
+            <li>富山のどの宿に泊まっても個性があり、また行きたいと思わせる魅力がある。</li>
+            
+            <li>チューリップ園のチューリップがとても綺麗で広大で、また是非行きたいと思いました！</li>
+            
+          </ul>
+        </div>
+      </div>
+      
+      
+      <div class="attr-card male">
+        <div class="attr-card-header">
+          <div class="attr-card-title">男性</div>
+          <div class="attr-card-n">n = 790</div>
+        </div>
+        
+        
+        
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">雪の大谷・立山黒部</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%"></span></span>
+            <span class="theme-count">67件 / 8.5%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">雨晴海岸</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:62%"></span></span>
+            <span class="theme-count">42件 / 5.3%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">チューリップフェア・砺波</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:54%"></span></span>
+            <span class="theme-count">36件 / 4.6%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">温泉</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:38%"></span></span>
+            <span class="theme-count">25件 / 3.2%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">黒部峡谷・宇奈月</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:34%"></span></span>
+            <span class="theme-count">23件 / 2.9%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">立山連峰の眺望</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:33%"></span></span>
+            <span class="theme-count">22件 / 2.8%</span>
+          </li>
+          
+        </ul>
+        
+        <div class="quotes male">
+          <div class="quotes-title">感動の声</div>
+          <ul>
+            
+            <li>伏木の「磯はなび」で見た、日の出の光景と、氷見番屋から見た富山湾越しの立山は、まさに絶景で、感動しました。</li>
+            
+            <li>氷見番屋周辺、呉羽フットパス連絡橋から見る立山連峰、雨晴海岸、きっときと市場周辺、ヒスイ海岸</li>
+            
+            <li>松川遊覧船、ガラス美術館、富山県美術館のくまや絵本</li>
+            
+          </ul>
+        </div>
+      </div>
+      
+    </div>
+    
+    
+    <h3 class="sub-title">② ポジティブな感動 ― 食</h3>
+    <div class="attr-grid-gender">
+      
+      
+      <div class="attr-card female">
+        <div class="attr-card-header">
+          <div class="attr-card-title">女性</div>
+          <div class="attr-card-n">n = 1136</div>
+        </div>
+        
+        
+        
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">寿司・刺身</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%"></span></span>
+            <span class="theme-count">257件 / 22.6%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ホタルイカ</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:58%"></span></span>
+            <span class="theme-count">149件 / 13.1%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">白えび</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:57%"></span></span>
+            <span class="theme-count">146件 / 12.9%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ブリ・寒ブリ</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:16%"></span></span>
+            <span class="theme-count">41件 / 3.6%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ます寿司</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:12%"></span></span>
+            <span class="theme-count">31件 / 2.7%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">昆布関連</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:9%"></span></span>
+            <span class="theme-count">23件 / 2.0%</span>
+          </li>
+          
+        </ul>
+        
+        <div class="quotes female">
+          <div class="quotes-title">感動の声</div>
+          <ul>
+            
+            <li>チューリップフェアの移動販売ののイチゴのフローズンかき氷が</li>
+            
+            <li>宿泊施設でのデザートが美味しかったです。</li>
+            
+            <li>ホタルイカミュージアムのホタルイカしゃぶしゃぶ</li>
+            
+          </ul>
+        </div>
+      </div>
+      
+      
+      <div class="attr-card male">
+        <div class="attr-card-header">
+          <div class="attr-card-title">男性</div>
+          <div class="attr-card-n">n = 790</div>
+        </div>
+        
+        
+        
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">寿司・刺身</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%"></span></span>
+            <span class="theme-count">174件 / 22.0%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ホタルイカ</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:52%"></span></span>
+            <span class="theme-count">91件 / 11.5%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">白えび</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:38%"></span></span>
+            <span class="theme-count">66件 / 8.4%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ブリ・寒ブリ</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:13%"></span></span>
+            <span class="theme-count">22件 / 2.8%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">富山ブラック・ラーメン</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:13%"></span></span>
+            <span class="theme-count">22件 / 2.8%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ベニズワイ・カニ</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:9%"></span></span>
+            <span class="theme-count">15件 / 1.9%</span>
+          </li>
+          
+        </ul>
+        
+        <div class="quotes male">
+          <div class="quotes-title">感動の声</div>
+          <ul>
+            
+            <li>道の駅氷見で昼食を撮りましたが、手頃な価格で美味しく頂きました。</li>
+            
+            <li>なんといっても寿司です！何食べても美味しい！</li>
+            
+            <li>美乃鮨で食べたホタルイカの刺身、特にこのわたが美味しかつたです。又お寿司もとても美味しく頂きました。</li>
+            
+          </ul>
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <h3 class="sub-title">③ 課題・改善要望</h3>
+    <p>困りごとでは二次交通の不便が男女ともに最多で大きな差はないが、飲食店の混雑・行列・予約に関する不満は女性でやや高い傾向がみられた。</p>
+    <div class="attr-grid-gender">
+      
+      
+      <div class="attr-card female">
+        <div class="attr-card-header">
+          <div class="attr-card-title">女性</div>
+          <div class="attr-card-n">n = 1136</div>
+        </div>
+        
+        
+        
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">公共交通の本数・接続</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%"></span></span>
+            <span class="theme-count">69件 / 6.1%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">飲食店の確保・予約</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:67%"></span></span>
+            <span class="theme-count">47件 / 4.1%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">駐車場</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:66%"></span></span>
+            <span class="theme-count">46件 / 4.0%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">気候・服装</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:57%"></span></span>
+            <span class="theme-count">40件 / 3.5%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">混雑・渋滞</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:57%"></span></span>
+            <span class="theme-count">40件 / 3.5%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">マイカー以外での移動困難</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:43%"></span></span>
+            <span class="theme-count">29件 / 2.6%</span>
+          </li>
+          
+        </ul>
+        
+        <div class="quotes female">
+          <div class="quotes-title">課題の声</div>
+          <ul>
+            
+            <li>自然を堪能しようと思っていたが、雨天予報となり、雨天でも楽しめる場所を探すのに苦労した。</li>
+            
+            <li>街ならアクセス良いけど、ちょっと閑散とした地域では車がないとアクセス悪いです</li>
+            
+            <li>白エビの刺身を食べたかったのですが、売り切れや大行列で食べられる場所を見つけるのに苦労しました。</li>
+            
+          </ul>
+        </div>
+      </div>
+      
+      
+      <div class="attr-card male">
+        <div class="attr-card-header">
+          <div class="attr-card-title">男性</div>
+          <div class="attr-card-n">n = 790</div>
+        </div>
+        
+        
+        
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">公共交通の本数・接続</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%"></span></span>
+            <span class="theme-count">40件 / 5.1%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">混雑・渋滞</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:57%"></span></span>
+            <span class="theme-count">23件 / 2.9%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">気候・服装</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:43%"></span></span>
+            <span class="theme-count">17件 / 2.2%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">駐車場</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:39%"></span></span>
+            <span class="theme-count">16件 / 2.0%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">マイカー以外での移動困難</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:37%"></span></span>
+            <span class="theme-count">15件 / 1.9%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">飲食店の確保・予約</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:31%"></span></span>
+            <span class="theme-count">13件 / 1.6%</span>
+          </li>
+          
+        </ul>
+        
+        <div class="quotes male">
+          <div class="quotes-title">課題の声</div>
+          <ul>
+            
+            <li>井波彫刻総合会館に神輿で通行止になり行けなかった</li>
+            
+            <li>駅前エリアに商業施設(イオン等)がなく、アクセスするためには一度駐車場から出庫する必要がある</li>
+            
+            <li>天気もよかったので、ないけど、山や景色は天候に左右されそう</li>
+            
+          </ul>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <section id="chap5">
+    <div class="section-label">CHAPTER 05</div>
+    <h2 class="section-title">年代で見る感動と課題</h2>
+    <p class="section-lede">本章では年代別の傾向を概観する。平均年齢は<strong>54.0歳</strong>、50代（29.6％）と60代（27.8％）が中心で、40代以上が<strong>83.8％</strong>を占める。時間と予算に余裕のある成熟層が本県観光の主たる担い手であり、夫婦での周遊や食・絶景を目的とした旅が基調となっている。一方、20〜30代は計15.2％にとどまる。</p>
+
+    
+    
+
+    
+
+    
+    <h3 class="sub-title">① ポジティブな感動 ― 観光・体験</h3>
+    
+    
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+    
+      
+    
+    
+    
+    
+    
+    
+    <div class="age-row">
+      <div class="age-row-label">
+        <div class="age-row-title">20代</div>
+        <div class="age-row-n">n = 111</div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:19%; background:#5fa8a8;"></div></div>
+      </div>
+      <div>
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">雪の大谷・立山黒部</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#5fa8a8;"></span></span>
+            <span class="theme-count">9件 / 8.1%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">チューリップフェア・砺波</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:67%; background:#5fa8a8;"></span></span>
+            <span class="theme-count">6件 / 5.4%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">温泉</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:67%; background:#5fa8a8;"></span></span>
+            <span class="theme-count">6件 / 5.4%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">黒部峡谷・宇奈月</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:44%; background:#5fa8a8;"></span></span>
+            <span class="theme-count">4件 / 3.6%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ガラス美術館</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:44%; background:#5fa8a8;"></span></span>
+            <span class="theme-count">4件 / 3.6%</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <div class="quotes" style="border-left-color:#5fa8a8;">
+          <div class="quotes-title" style="color:#5fa8a8;">声の抜粋</div>
+          <ul>
+            
+            <li>チューリップが咲き誇る、となみチューリップフェアの景色</li>
+            
+            <li>初めて立山連峰を見て、その大きさと迫力に驚きました。壮大な景色を見ることができて幸せでした。</li>
+            
+            <li>能作の工場に行って能作の凄さを感じて、かわいいグラスが買えてよかった！</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="age-row">
+      <div class="age-row-label">
+        <div class="age-row-title">30代</div>
+        <div class="age-row-n">n = 185</div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:32%; background:#2d7a7a;"></div></div>
+      </div>
+      <div>
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">チューリップフェア・砺波</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#2d7a7a;"></span></span>
+            <span class="theme-count">11件 / 5.9%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">温泉</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:73%; background:#2d7a7a;"></span></span>
+            <span class="theme-count">8件 / 4.3%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">雪の大谷・立山黒部</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:73%; background:#2d7a7a;"></span></span>
+            <span class="theme-count">8件 / 4.3%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">雨晴海岸</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:73%; background:#2d7a7a;"></span></span>
+            <span class="theme-count">8件 / 4.3%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ホタルイカ関連体験</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:64%; background:#2d7a7a;"></span></span>
+            <span class="theme-count">7件 / 3.8%</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <div class="quotes" style="border-left-color:#2d7a7a;">
+          <div class="quotes-title" style="color:#2d7a7a;">声の抜粋</div>
+          <ul>
+            
+            <li>ホタルイカミュージアムでホタルイカに触れたり、食べたりできたこと。</li>
+            
+            <li>隙間時間にふらっと立ち寄った富山県立美術館。屋上が無料公開されていて気軽にアートに触れられました。</li>
+            
+            <li>ホタルイカミュージアムでの発光ショーとタッチプールラフは初めての体験ができ、とても思い出になりました。</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="age-row">
+      <div class="age-row-label">
+        <div class="age-row-title">40代</div>
+        <div class="age-row-n">n = 299</div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:52%; background:#1a5454;"></div></div>
+      </div>
+      <div>
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">雪の大谷・立山黒部</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#1a5454;"></span></span>
+            <span class="theme-count">22件 / 7.4%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ホタルイカ関連体験</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:73%; background:#1a5454;"></span></span>
+            <span class="theme-count">16件 / 5.4%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">チューリップフェア・砺波</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:68%; background:#1a5454;"></span></span>
+            <span class="theme-count">15件 / 5.0%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">雨晴海岸</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:68%; background:#1a5454;"></span></span>
+            <span class="theme-count">15件 / 5.0%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">温泉</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:58%; background:#1a5454;"></span></span>
+            <span class="theme-count">13件 / 4.3%</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <div class="quotes" style="border-left-color:#1a5454;">
+          <div class="quotes-title" style="color:#1a5454;">声の抜粋</div>
+          <ul>
+            
+            <li>トロッコ列車に乗るために一番前で改札に並んでいたら、駅員さんが切符を切る体験を子供にさせてくれたこと。</li>
+            
+            <li>瑞龍寺でガイドの方に詳しく説明してもらい、子供も一緒に勉強しながら楽しく過ごせた。</li>
+            
+            <li>ホタルイカミュージアムのホタルイカが光るショーは最高だった</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="age-row">
+      <div class="age-row-label">
+        <div class="age-row-title">50代</div>
+        <div class="age-row-n">n = 575</div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:100%; background:#3a7194;"></div></div>
+      </div>
+      <div>
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">雪の大谷・立山黒部</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#3a7194;"></span></span>
+            <span class="theme-count">62件 / 10.8%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">雨晴海岸</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:50%; background:#3a7194;"></span></span>
+            <span class="theme-count">31件 / 5.4%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">温泉</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:46%; background:#3a7194;"></span></span>
+            <span class="theme-count">29件 / 5.0%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">チューリップフェア・砺波</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:39%; background:#3a7194;"></span></span>
+            <span class="theme-count">24件 / 4.2%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">氷見</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:31%; background:#3a7194;"></span></span>
+            <span class="theme-count">19件 / 3.3%</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <div class="quotes" style="border-left-color:#3a7194;">
+          <div class="quotes-title" style="color:#3a7194;">声の抜粋</div>
+          <ul>
+            
+            <li>クロスランド小谷部で孫とタワーに登ったり親子でミニSLに乗りました</li>
+            
+            <li>魚の駅生地に行き沢山魚をみて買い、水を飲み比べで歩いた事楽しかったです</li>
+            
+            <li>ヒスイ海岸で夢中になってヒスイ探しが楽しかった。判定してくださる方がいらして結果見つけられなかったがとてもドキドキできて良かった。</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="age-row">
+      <div class="age-row-label">
+        <div class="age-row-title">60代</div>
+        <div class="age-row-n">n = 540</div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:94%; background:#1d4e6f;"></div></div>
+      </div>
+      <div>
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">雪の大谷・立山黒部</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#1d4e6f;"></span></span>
+            <span class="theme-count">63件 / 11.7%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">雨晴海岸</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:59%; background:#1d4e6f;"></span></span>
+            <span class="theme-count">37件 / 6.9%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">温泉</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:48%; background:#1d4e6f;"></span></span>
+            <span class="theme-count">30件 / 5.6%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">チューリップフェア・砺波</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:44%; background:#1d4e6f;"></span></span>
+            <span class="theme-count">28件 / 5.2%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">立山連峰の眺望</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:41%; background:#1d4e6f;"></span></span>
+            <span class="theme-count">26件 / 4.8%</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <div class="quotes" style="border-left-color:#1d4e6f;">
+          <div class="quotes-title" style="color:#1d4e6f;">声の抜粋</div>
+          <ul>
+            
+            <li>初めての温泉（大岩不動の湯）が見つけられて良かった。</li>
+            
+            <li>黒部立山アルペンルートが長野県側から入った事で、交通機関が空いてたこと。</li>
+            
+            <li>大好きな北アルプスの雄大な山並みが行く先々から見られた事に何よりも幸せを感じました。</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="age-row">
+      <div class="age-row-label">
+        <div class="age-row-title">70代以上</div>
+        <div class="age-row-n">n = 215</div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:37%; background:#0e3550;"></div></div>
+      </div>
+      <div>
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">チューリップフェア・砺波</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#0e3550;"></span></span>
+            <span class="theme-count">15件 / 7.0%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">雨晴海岸</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#0e3550;"></span></span>
+            <span class="theme-count">15件 / 7.0%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">雪の大谷・立山黒部</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:93%; background:#0e3550;"></span></span>
+            <span class="theme-count">14件 / 6.5%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">立山連峰の眺望</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:73%; background:#0e3550;"></span></span>
+            <span class="theme-count">11件 / 5.1%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">氷見</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:60%; background:#0e3550;"></span></span>
+            <span class="theme-count">9件 / 4.2%</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <div class="quotes" style="border-left-color:#0e3550;">
+          <div class="quotes-title" style="color:#0e3550;">声の抜粋</div>
+          <ul>
+            
+            <li>室堂での絶景を背にしての雪合戦ごっこ。童心に戻れました</li>
+            
+            <li>富山のどの宿に泊まっても個性があり、また行きたいと思わせる魅力がある。</li>
+            
+            <li>永芳閣で宿泊した部屋から、早朝に立山連峰が見えたこと。諦めていただけに感激した。</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    <h3 class="sub-title">② ポジティブな感動 ― 食</h3>
+    
+    
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+    
+      
+    
+    
+    
+    
+    
+    
+    <div class="age-row">
+      <div class="age-row-label">
+        <div class="age-row-title">20代</div>
+        <div class="age-row-n">n = 111</div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:19%; background:#5fa8a8;"></div></div>
+      </div>
+      <div>
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">寿司・刺身</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#5fa8a8;"></span></span>
+            <span class="theme-count">21件 / 18.9%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ホタルイカ</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:62%; background:#5fa8a8;"></span></span>
+            <span class="theme-count">13件 / 11.7%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">白えび</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:29%; background:#5fa8a8;"></span></span>
+            <span class="theme-count">6件 / 5.4%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ブリ・寒ブリ</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:24%; background:#5fa8a8;"></span></span>
+            <span class="theme-count">5件 / 4.5%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ます寿司</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:24%; background:#5fa8a8;"></span></span>
+            <span class="theme-count">5件 / 4.5%</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <div class="quotes" style="border-left-color:#5fa8a8;">
+          <div class="quotes-title" style="color:#5fa8a8;">声の抜粋</div>
+          <ul>
+            
+            <li>ホタルイカミュージアムのホタルイカしゃぶしゃぶ</li>
+            
+            <li>ぶり、ブーランジェリー今村のオリーブパン</li>
+            
+            <li>魚のあらが入ったあら汁がおいしかったです。魚がおいしいところは生で食べても、何をしてもおいしいということが分かりました！ごちそうさまでした！</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="age-row">
+      <div class="age-row-label">
+        <div class="age-row-title">30代</div>
+        <div class="age-row-n">n = 185</div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:32%; background:#2d7a7a;"></div></div>
+      </div>
+      <div>
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">寿司・刺身</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#2d7a7a;"></span></span>
+            <span class="theme-count">33件 / 17.8%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">白えび</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:76%; background:#2d7a7a;"></span></span>
+            <span class="theme-count">25件 / 13.5%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ホタルイカ</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:64%; background:#2d7a7a;"></span></span>
+            <span class="theme-count">21件 / 11.4%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ブリ・寒ブリ</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:21%; background:#2d7a7a;"></span></span>
+            <span class="theme-count">7件 / 3.8%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">富山ブラック・ラーメン</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:9%; background:#2d7a7a;"></span></span>
+            <span class="theme-count">3件 / 1.6%</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <div class="quotes" style="border-left-color:#2d7a7a;">
+          <div class="quotes-title" style="color:#2d7a7a;">声の抜粋</div>
+          <ul>
+            
+            <li>寿司食いねえで飲んだあら汁の魚がめちゃくちゃ大きかったこと</li>
+            
+            <li>ホタルイカ！普段スーパーで食べるものと全然違って美味しかったです！この時期に富山県に来て正解でした！</li>
+            
+            <li>小政寿司で食べたお寿司お刺身。三朗丸のレストランで食べたローストビーフ重。</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="age-row">
+      <div class="age-row-label">
+        <div class="age-row-title">40代</div>
+        <div class="age-row-n">n = 299</div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:52%; background:#1a5454;"></div></div>
+      </div>
+      <div>
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">寿司・刺身</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#1a5454;"></span></span>
+            <span class="theme-count">60件 / 20.1%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ホタルイカ</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:80%; background:#1a5454;"></span></span>
+            <span class="theme-count">48件 / 16.1%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">白えび</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:40%; background:#1a5454;"></span></span>
+            <span class="theme-count">24件 / 8.0%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ブリ・寒ブリ</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:30%; background:#1a5454;"></span></span>
+            <span class="theme-count">18件 / 6.0%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ます寿司</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:11%; background:#1a5454;"></span></span>
+            <span class="theme-count">7件 / 2.3%</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <div class="quotes" style="border-left-color:#1a5454;">
+          <div class="quotes-title" style="color:#1a5454;">声の抜粋</div>
+          <ul>
+            
+            <li>ホタルイカのしゃぶしゃぶ、サーモンレアかつ</li>
+            
+            <li>ブリとホタルイカ、あと白エビ天ぷらも美味しい</li>
+            
+            <li>五箇山の坂出さんの豆腐御前。山菜もお豆腐もおいしかった。</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="age-row">
+      <div class="age-row-label">
+        <div class="age-row-title">50代</div>
+        <div class="age-row-n">n = 575</div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:100%; background:#3a7194;"></div></div>
+      </div>
+      <div>
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">寿司・刺身</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#3a7194;"></span></span>
+            <span class="theme-count">130件 / 22.6%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ホタルイカ</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:60%; background:#3a7194;"></span></span>
+            <span class="theme-count">78件 / 13.6%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">白えび</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:54%; background:#3a7194;"></span></span>
+            <span class="theme-count">70件 / 12.2%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ブリ・寒ブリ</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:15%; background:#3a7194;"></span></span>
+            <span class="theme-count">19件 / 3.3%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ベニズワイ・カニ</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:15%; background:#3a7194;"></span></span>
+            <span class="theme-count">19件 / 3.3%</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <div class="quotes" style="border-left-color:#3a7194;">
+          <div class="quotes-title" style="color:#3a7194;">声の抜粋</div>
+          <ul>
+            
+            <li>糸庄さんのホルモンうどん。ホントに美味しかった〜。</li>
+            
+            <li>番屋街のクレープ、マックスバリューで買ったニューちどりの赤飯おにぎりと牡蠣めし弁当</li>
+            
+            <li>寿司。全く安くない回転寿司だったが、これなら高くても仕方ないな、と思えるクオリティだった。</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="age-row">
+      <div class="age-row-label">
+        <div class="age-row-title">60代</div>
+        <div class="age-row-n">n = 540</div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:94%; background:#1d4e6f;"></div></div>
+      </div>
+      <div>
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">寿司・刺身</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#1d4e6f;"></span></span>
+            <span class="theme-count">131件 / 24.3%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">白えび</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:49%; background:#1d4e6f;"></span></span>
+            <span class="theme-count">64件 / 11.9%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ホタルイカ</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:46%; background:#1d4e6f;"></span></span>
+            <span class="theme-count">60件 / 11.1%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ます寿司</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:9%; background:#1d4e6f;"></span></span>
+            <span class="theme-count">12件 / 2.2%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ブリ・寒ブリ</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:8%; background:#1d4e6f;"></span></span>
+            <span class="theme-count">10件 / 1.9%</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <div class="quotes" style="border-left-color:#1d4e6f;">
+          <div class="quotes-title" style="color:#1d4e6f;">声の抜粋</div>
+          <ul>
+            
+            <li>ブラックラーメン。それと氷見煮干しラーメン</li>
+            
+            <li>宿泊施設でのデザートが美味しかったです。</li>
+            
+            <li>白海老の唐揚げはもちろん、シオノコのなめろう、氷見牛のすき焼き、どれも美味しいです。1日目夜のあさりごはんも美味しかったです。氷見産コシヒカリ、美味しいです。</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="age-row">
+      <div class="age-row-label">
+        <div class="age-row-title">70代以上</div>
+        <div class="age-row-n">n = 215</div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:37%; background:#0e3550;"></div></div>
+      </div>
+      <div>
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">寿司・刺身</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#0e3550;"></span></span>
+            <span class="theme-count">58件 / 27.0%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">白えび</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:43%; background:#0e3550;"></span></span>
+            <span class="theme-count">25件 / 11.6%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ホタルイカ</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:33%; background:#0e3550;"></span></span>
+            <span class="theme-count">19件 / 8.8%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ブリ・寒ブリ</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:7%; background:#0e3550;"></span></span>
+            <span class="theme-count">4件 / 1.9%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">富山ブラック・ラーメン</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:5%; background:#0e3550;"></span></span>
+            <span class="theme-count">3件 / 1.4%</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <div class="quotes" style="border-left-color:#0e3550;">
+          <div class="quotes-title" style="color:#0e3550;">声の抜粋</div>
+          <ul>
+            
+            <li>何といっても、ホタルイカです。酢味噌や沖漬はたまらないと思います。</li>
+            
+            <li>立山ホテルで食べたカツカレーの御飯。富山のお米らしいが、美味しかった。</li>
+            
+            <li>みくりが池温泉での心のこもった美味しい食事</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    <h3 class="sub-title">③ 課題・改善要望</h3>
+    
+    
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+    
+      
+    
+    
+    
+    
+    
+    
+    <div class="age-row">
+      <div class="age-row-label">
+        <div class="age-row-title">20代</div>
+        <div class="age-row-n">n = 111</div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:19%; background:#5fa8a8;"></div></div>
+      </div>
+      <div>
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">公共交通の本数・接続</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#5fa8a8;"></span></span>
+            <span class="theme-count">9件 / 8.1%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">駐車場</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:33%; background:#5fa8a8;"></span></span>
+            <span class="theme-count">3件 / 2.7%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">飲食店の確保・予約</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:33%; background:#5fa8a8;"></span></span>
+            <span class="theme-count">3件 / 2.7%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">気候・服装</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:22%; background:#5fa8a8;"></span></span>
+            <span class="theme-count">2件 / 1.8%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">キャッシュレス・ICカード</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:22%; background:#5fa8a8;"></span></span>
+            <span class="theme-count">2件 / 1.8%</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <div class="quotes" style="border-left-color:#5fa8a8;">
+          <div class="quotes-title" style="color:#5fa8a8;">声の抜粋</div>
+          <ul>
+            
+            <li>立山黒部アルペンルートでは事前に時刻表を参照して行ったが、現地では時刻表に無い臨時便が出ていた。臨時便に乗ることで効率よく移動できたが、臨時便の有無は現地の各駅に行くまで分からないのだろうか？</li>
+            
+            <li>駅前に宿泊したが、夕飯を食べていたら20時には色んな店が閉まってしまい、お土産を購入する時間がほぼとれなかった</li>
+            
+            <li>チューリップ公園から出るシャトルバスと砺波駅の電車の乗り換え時間が短く焦った。視覚障害者の方もバスに乗っており、電車の発車時刻ギリギリでみている方もヒヤヒヤしました</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="age-row">
+      <div class="age-row-label">
+        <div class="age-row-title">30代</div>
+        <div class="age-row-n">n = 185</div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:32%; background:#2d7a7a;"></div></div>
+      </div>
+      <div>
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">公共交通の本数・接続</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#2d7a7a;"></span></span>
+            <span class="theme-count">13件 / 7.0%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">混雑・渋滞</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:61%; background:#2d7a7a;"></span></span>
+            <span class="theme-count">8件 / 4.3%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">駐車場</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:61%; background:#2d7a7a;"></span></span>
+            <span class="theme-count">8件 / 4.3%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">マイカー以外での移動困難</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:54%; background:#2d7a7a;"></span></span>
+            <span class="theme-count">7件 / 3.8%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">飲食店の確保・予約</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:54%; background:#2d7a7a;"></span></span>
+            <span class="theme-count">7件 / 3.8%</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <div class="quotes" style="border-left-color:#2d7a7a;">
+          <div class="quotes-title" style="color:#2d7a7a;">声の抜粋</div>
+          <ul>
+            
+            <li>雨晴の道の駅の駐車場が少なくて混んでいた</li>
+            
+            <li>子供を連れての旅行のため、近くに大きな公園など整備されていればなお良かった。室内で遊べるところが増えたらいい。</li>
+            
+            <li>夜は居酒屋のサンジュウマルを利用しましたが、少し店が汚かったと感じました。</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="age-row">
+      <div class="age-row-label">
+        <div class="age-row-title">40代</div>
+        <div class="age-row-n">n = 299</div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:52%; background:#1a5454;"></div></div>
+      </div>
+      <div>
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">公共交通の本数・接続</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#1a5454;"></span></span>
+            <span class="theme-count">18件 / 6.0%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">混雑・渋滞</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:78%; background:#1a5454;"></span></span>
+            <span class="theme-count">14件 / 4.7%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">飲食店の確保・予約</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:67%; background:#1a5454;"></span></span>
+            <span class="theme-count">12件 / 4.0%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">気候・服装</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:62%; background:#1a5454;"></span></span>
+            <span class="theme-count">11件 / 3.7%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">駐車場</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:62%; background:#1a5454;"></span></span>
+            <span class="theme-count">11件 / 3.7%</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <div class="quotes" style="border-left-color:#1a5454;">
+          <div class="quotes-title" style="color:#1a5454;">声の抜粋</div>
+          <ul>
+            
+            <li>華山温泉に露天風呂がなかったのが残念でした</li>
+            
+            <li>お出かけスポットなどもう少し詳しい情報が知りたかった</li>
+            
+            <li>天候の事なので仕方ないが、大雨防風の日だったのが残念だった。</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="age-row">
+      <div class="age-row-label">
+        <div class="age-row-title">50代</div>
+        <div class="age-row-n">n = 575</div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:100%; background:#3a7194;"></div></div>
+      </div>
+      <div>
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">公共交通の本数・接続</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#3a7194;"></span></span>
+            <span class="theme-count">32件 / 5.6%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">飲食店の確保・予約</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:71%; background:#3a7194;"></span></span>
+            <span class="theme-count">23件 / 4.0%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">混雑・渋滞</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:66%; background:#3a7194;"></span></span>
+            <span class="theme-count">21件 / 3.7%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">駐車場</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:62%; background:#3a7194;"></span></span>
+            <span class="theme-count">20件 / 3.5%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">宿泊施設</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:55%; background:#3a7194;"></span></span>
+            <span class="theme-count">18件 / 3.1%</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <div class="quotes" style="border-left-color:#3a7194;">
+          <div class="quotes-title" style="color:#3a7194;">声の抜粋</div>
+          <ul>
+            
+            <li>春もどっちも好きだけど、ドカ雪の時は最高でした</li>
+            
+            <li>氷見市ふれあいスポーツセンターの駐車場が少ないこと</li>
+            
+            <li>あいの風富山鉄道と　電鉄富山鉄道を、混同していて　フリーパスで戸惑った</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="age-row">
+      <div class="age-row-label">
+        <div class="age-row-title">60代</div>
+        <div class="age-row-n">n = 540</div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:94%; background:#1d4e6f;"></div></div>
+      </div>
+      <div>
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">気候・服装</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#1d4e6f;"></span></span>
+            <span class="theme-count">24件 / 4.4%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">公共交通の本数・接続</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:93%; background:#1d4e6f;"></span></span>
+            <span class="theme-count">22件 / 4.1%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">混雑・渋滞</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:75%; background:#1d4e6f;"></span></span>
+            <span class="theme-count">18件 / 3.3%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">駐車場</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:75%; background:#1d4e6f;"></span></span>
+            <span class="theme-count">18件 / 3.3%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">飲食店の確保・予約</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:55%; background:#1d4e6f;"></span></span>
+            <span class="theme-count">13件 / 2.4%</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <div class="quotes" style="border-left-color:#1d4e6f;">
+          <div class="quotes-title" style="color:#1d4e6f;">声の抜粋</div>
+          <ul>
+            
+            <li>室堂ターミナルのベンチが撤去されており、登山靴を履いたり、パッキングする等準備する場所に不自由した。 室堂ターミナルに人集りが出来ていて、通行の妨げになった。</li>
+            
+            <li>バス🚌でPASMO、Suicaが使えないこと</li>
+            
+            <li>絶対に予約していた居酒屋が予約していないと断られ気分が悪かった。</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="age-row">
+      <div class="age-row-label">
+        <div class="age-row-title">70代以上</div>
+        <div class="age-row-n">n = 215</div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:37%; background:#0e3550;"></div></div>
+      </div>
+      <div>
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">公共交通の本数・接続</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#0e3550;"></span></span>
+            <span class="theme-count">12件 / 5.6%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">マイカー以外での移動困難</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:59%; background:#0e3550;"></span></span>
+            <span class="theme-count">7件 / 3.3%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">宿泊施設</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:41%; background:#0e3550;"></span></span>
+            <span class="theme-count">5件 / 2.3%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">混雑・渋滞</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:25%; background:#0e3550;"></span></span>
+            <span class="theme-count">3件 / 1.4%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">飲食店の確保・予約</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:25%; background:#0e3550;"></span></span>
+            <span class="theme-count">3件 / 1.4%</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <div class="quotes" style="border-left-color:#0e3550;">
+          <div class="quotes-title" style="color:#0e3550;">声の抜粋</div>
+          <ul>
+            
+            <li>交通の便　電車数が少なく移動な時間がかかる。</li>
+            
+            <li>海の幸が新鮮なんだろうが、値段が全体に高めに思う。だから、色々な種類や多くの量を食べられない。残念！</li>
+            
+            <li>全般的に公共交通機関での移動が不便。特にあいの風が激混みだったこと。</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+  </section>
+
+  <section id="chap6">
+    <div class="section-label">CHAPTER 06</div>
+    <h2 class="section-title">同行者で見る感動と課題</h2>
+    <p class="section-lede">本章では同行者別の傾向をみる。<strong>夫婦（39.1％）</strong>が突出し、カップルを含めると43.5％に達する。大人の家族（19.5％）が続き、これらを合わせると大人中心の旅が大半を占める。ひとり旅は12.0％で、公共交通への依存度が高く二次交通の不便を訴える割合が相対的に高い。子連れ家族は計12.1％にとどまった。</p>
+
+    
+    
+
+    
+
+    
+    <h3 class="sub-title">① ポジティブな感動 ― 観光・体験</h3>
+    
+    
+      
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+    
+    
+    
+    <div class="age-row">
+      <div class="age-row-label">
+        <div class="age-row-title">夫婦</div>
+        <div class="age-row-n">n = 760</div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:100%; background:#0e3550;"></div></div>
+      </div>
+      <div>
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">雪の大谷・立山黒部</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#0e3550;"></span></span>
+            <span class="theme-count">72件 / 9.5%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">雨晴海岸</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:67%; background:#0e3550;"></span></span>
+            <span class="theme-count">49件 / 6.4%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">チューリップフェア・砺波</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:54%; background:#0e3550;"></span></span>
+            <span class="theme-count">39件 / 5.1%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">温泉</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:53%; background:#0e3550;"></span></span>
+            <span class="theme-count">38件 / 5.0%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">立山連峰の眺望</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:41%; background:#0e3550;"></span></span>
+            <span class="theme-count">30件 / 3.9%</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <div class="quotes" style="border-left-color:#0e3550;">
+          <div class="quotes-title" style="color:#0e3550;">声の抜粋</div>
+          <ul>
+            
+            <li>帰省が主目的で、ガラス美術館にはずっと行ってみたくやっと行けました。</li>
+            
+            <li>新湊大橋から見える立山連峰が素晴らしいすぎて感動しました。</li>
+            
+            <li>立山室堂に滞在したが、そこから見える北アルプスは全部登った事があり、思い出が蘇った。滞在中天気が良く、雷鳥がたくさん見られたのも良かった。</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="age-row">
+      <div class="age-row-label">
+        <div class="age-row-title">ひとり</div>
+        <div class="age-row-n">n = 234</div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:31%; background:#1d4e6f;"></div></div>
+      </div>
+      <div>
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">雪の大谷・立山黒部</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#1d4e6f;"></span></span>
+            <span class="theme-count">16件 / 6.8%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">黒部峡谷・宇奈月</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:69%; background:#1d4e6f;"></span></span>
+            <span class="theme-count">11件 / 4.7%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">雨晴海岸</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:63%; background:#1d4e6f;"></span></span>
+            <span class="theme-count">10件 / 4.3%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">氷見</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:50%; background:#1d4e6f;"></span></span>
+            <span class="theme-count">8件 / 3.4%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">立山連峰の眺望</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:44%; background:#1d4e6f;"></span></span>
+            <span class="theme-count">7件 / 3.0%</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <div class="quotes" style="border-left-color:#1d4e6f;">
+          <div class="quotes-title" style="color:#1d4e6f;">声の抜粋</div>
+          <ul>
+            
+            <li>氷見線に乗って雨晴海岸へ行った事と昨年来行きたかった岩瀬の街並みを歩いたこと。</li>
+            
+            <li>福野夜高 ケンカが長くて少し心配になりましたが、感動しました。</li>
+            
+            <li>井波の街中に木彫があり生活の中に工芸があると感じました</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="age-row">
+      <div class="age-row-label">
+        <div class="age-row-title">大人の家族</div>
+        <div class="age-row-n">n = 380</div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:50%; background:#3a7194;"></div></div>
+      </div>
+      <div>
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">雪の大谷・立山黒部</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#3a7194;"></span></span>
+            <span class="theme-count">38件 / 10.0%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">雨晴海岸</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:66%; background:#3a7194;"></span></span>
+            <span class="theme-count">25件 / 6.6%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">チューリップフェア・砺波</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:61%; background:#3a7194;"></span></span>
+            <span class="theme-count">23件 / 6.1%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">温泉</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:61%; background:#3a7194;"></span></span>
+            <span class="theme-count">23件 / 6.1%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">黒部峡谷・宇奈月</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:42%; background:#3a7194;"></span></span>
+            <span class="theme-count">16件 / 4.2%</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <div class="quotes" style="border-left-color:#3a7194;">
+          <div class="quotes-title" style="color:#3a7194;">声の抜粋</div>
+          <ul>
+            
+            <li>雨晴海岸からもう少し北？に行ったところから見た2つの島と海の景色、テトラポットと松があるところです。眺めが良ければ立山連峰が見えるところで、平和交通さんに連れて行っていただき見させていただきました。</li>
+            
+            <li>雪の大谷、室堂の雪の回廊など日頃体験することのない雪に感動しました。</li>
+            
+            <li>マンホールカードが貰えたし、実際に見られた。配水塔資料館は、電車からいつも見ていたので実際に行けた事が嬉しかった</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="age-row">
+      <div class="age-row-label">
+        <div class="age-row-title">友人・知人</div>
+        <div class="age-row-n">n = 178</div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:23%; background:#1a5454;"></div></div>
+      </div>
+      <div>
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">雪の大谷・立山黒部</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#1a5454;"></span></span>
+            <span class="theme-count">23件 / 12.9%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">雨晴海岸</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:52%; background:#1a5454;"></span></span>
+            <span class="theme-count">12件 / 6.7%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">立山連峰の眺望</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:48%; background:#1a5454;"></span></span>
+            <span class="theme-count">11件 / 6.2%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">チューリップフェア・砺波</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:40%; background:#1a5454;"></span></span>
+            <span class="theme-count">9件 / 5.1%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">温泉</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:35%; background:#1a5454;"></span></span>
+            <span class="theme-count">8件 / 4.5%</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <div class="quotes" style="border-left-color:#1a5454;">
+          <div class="quotes-title" style="color:#1a5454;">声の抜粋</div>
+          <ul>
+            
+            <li>雨晴海岸から薄っすらと立山連峰が見えた。雪の残っている北アルプスを間近に見た事、室堂付近を散策し、雷鳥を間近で見ることが出来た。</li>
+            
+            <li>ホタルイカミュージアムでの発光ショーとタッチプールラフは初めての体験ができ、とても思い出になりました。</li>
+            
+            <li>砺波チューリップ公園・五箇山・立山連峰を見る事ができる景色</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="age-row">
+      <div class="age-row-label">
+        <div class="age-row-title">子連れ(未就学児)</div>
+        <div class="age-row-n">n = 89</div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:12%; background:#2d7a7a;"></div></div>
+      </div>
+      <div>
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">チューリップフェア・砺波</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#2d7a7a;"></span></span>
+            <span class="theme-count">8件 / 9.0%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">温泉</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:62%; background:#2d7a7a;"></span></span>
+            <span class="theme-count">5件 / 5.6%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">黒部峡谷・宇奈月</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:62%; background:#2d7a7a;"></span></span>
+            <span class="theme-count">5件 / 5.6%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">氷見</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:24%; background:#2d7a7a;"></span></span>
+            <span class="theme-count">2件 / 2.2%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ヒスイ海岸</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:24%; background:#2d7a7a;"></span></span>
+            <span class="theme-count">2件 / 2.2%</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <div class="quotes" style="border-left-color:#2d7a7a;">
+          <div class="quotes-title" style="color:#2d7a7a;">声の抜粋</div>
+          <ul>
+            
+            <li>ファミリーパークは広く、いろんな世代が楽しめると思った。</li>
+            
+            <li>子どもたちが元気に走ったり、花壇の簡単な迷路？で笑っているところ。</li>
+            
+            <li>春日温泉で子供も大人も楽しめました。公園も近くにあったので。富山運動公園も寄りました。</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="age-row">
+      <div class="age-row-label">
+        <div class="age-row-title">子連れ(小〜高生)</div>
+        <div class="age-row-n">n = 146</div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:19%; background:#5fa8a8;"></div></div>
+      </div>
+      <div>
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">雪の大谷・立山黒部</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#5fa8a8;"></span></span>
+            <span class="theme-count">16件 / 11.0%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ホタルイカ関連体験</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:62%; background:#5fa8a8;"></span></span>
+            <span class="theme-count">10件 / 6.8%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">チューリップフェア・砺波</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:44%; background:#5fa8a8;"></span></span>
+            <span class="theme-count">7件 / 4.8%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ガラス美術館</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:44%; background:#5fa8a8;"></span></span>
+            <span class="theme-count">7件 / 4.8%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ヒスイ海岸</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:37%; background:#5fa8a8;"></span></span>
+            <span class="theme-count">6件 / 4.1%</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <div class="quotes" style="border-left-color:#5fa8a8;">
+          <div class="quotes-title" style="color:#5fa8a8;">声の抜粋</div>
+          <ul>
+            
+            <li>ホタルイカミュージアムでホタルイカに触れたり、食べたりできたこと。</li>
+            
+            <li>立石あたりかな。美しい景色の中で家族の会話も弾む。</li>
+            
+            <li>トロッコ列車に乗るために一番前で改札に並んでいたら、駅員さんが切符を切る体験を子供にさせてくれたこと。</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="age-row">
+      <div class="age-row-label">
+        <div class="age-row-title">カップル</div>
+        <div class="age-row-n">n = 86</div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:11%; background:#b08840;"></div></div>
+      </div>
+      <div>
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">雪の大谷・立山黒部</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#b08840;"></span></span>
+            <span class="theme-count">7件 / 8.1%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">チューリップフェア・砺波</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:86%; background:#b08840;"></span></span>
+            <span class="theme-count">6件 / 7.0%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">温泉</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:72%; background:#b08840;"></span></span>
+            <span class="theme-count">5件 / 5.8%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">立山連峰の眺望</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:43%; background:#b08840;"></span></span>
+            <span class="theme-count">3件 / 3.5%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">魚津水族館</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:28%; background:#b08840;"></span></span>
+            <span class="theme-count">2件 / 2.3%</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <div class="quotes" style="border-left-color:#b08840;">
+          <div class="quotes-title" style="color:#b08840;">声の抜粋</div>
+          <ul>
+            
+            <li>隙間時間にふらっと立ち寄った富山県立美術館。屋上が無料公開されていて気軽にアートに触れられました。</li>
+            
+            <li>ファミリーパーク。ツシマヤマネコが大変かわいかったです</li>
+            
+            <li>ヒスイ海岸、ヒスイは見つけれなかったけど、ハートの白い石をゲットできた</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    <h3 class="sub-title">② ポジティブな感動 ― 食</h3>
+    
+    
+      
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+    
+    
+    
+    <div class="age-row">
+      <div class="age-row-label">
+        <div class="age-row-title">夫婦</div>
+        <div class="age-row-n">n = 760</div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:100%; background:#0e3550;"></div></div>
+      </div>
+      <div>
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">寿司・刺身</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#0e3550;"></span></span>
+            <span class="theme-count">178件 / 23.4%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ホタルイカ</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:55%; background:#0e3550;"></span></span>
+            <span class="theme-count">97件 / 12.8%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">白えび</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:45%; background:#0e3550;"></span></span>
+            <span class="theme-count">80件 / 10.5%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ブリ・寒ブリ</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:10%; background:#0e3550;"></span></span>
+            <span class="theme-count">18件 / 2.4%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ます寿司</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:9%; background:#0e3550;"></span></span>
+            <span class="theme-count">17件 / 2.2%</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <div class="quotes" style="border-left-color:#0e3550;">
+          <div class="quotes-title" style="color:#0e3550;">声の抜粋</div>
+          <ul>
+            
+            <li>刺身盛り（ヒラメ、サバ、フクラギ、サス）</li>
+            
+            <li>宿泊したホテルで出された、地元食材を使った料理。小鉢で提供されたので色々な味が楽しめて良かった。で</li>
+            
+            <li>メルヘン小谷部で売っていたレーズンケーキ</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="age-row">
+      <div class="age-row-label">
+        <div class="age-row-title">ひとり</div>
+        <div class="age-row-n">n = 234</div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:31%; background:#1d4e6f;"></div></div>
+      </div>
+      <div>
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">寿司・刺身</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#1d4e6f;"></span></span>
+            <span class="theme-count">60件 / 25.6%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ホタルイカ</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:40%; background:#1d4e6f;"></span></span>
+            <span class="theme-count">24件 / 10.3%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">白えび</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:33%; background:#1d4e6f;"></span></span>
+            <span class="theme-count">20件 / 8.5%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">富山ブラック・ラーメン</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:13%; background:#1d4e6f;"></span></span>
+            <span class="theme-count">8件 / 3.4%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ブリ・寒ブリ</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:10%; background:#1d4e6f;"></span></span>
+            <span class="theme-count">6件 / 2.6%</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <div class="quotes" style="border-left-color:#1d4e6f;">
+          <div class="quotes-title" style="color:#1d4e6f;">声の抜粋</div>
+          <ul>
+            
+            <li>ホタルイカミュージアムのホタルイカしゃぶしゃぶ</li>
+            
+            <li>魚のあらが入ったあら汁がおいしかったです。魚がおいしいところは生で食べても、何をしてもおいしいということが分かりました！ごちそうさまでした！</li>
+            
+            <li>立山ホテルで食べたカツカレーの御飯。富山のお米らしいが、美味しかった。</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="age-row">
+      <div class="age-row-label">
+        <div class="age-row-title">大人の家族</div>
+        <div class="age-row-n">n = 380</div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:50%; background:#3a7194;"></div></div>
+      </div>
+      <div>
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">寿司・刺身</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#3a7194;"></span></span>
+            <span class="theme-count">81件 / 21.3%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">白えび</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:65%; background:#3a7194;"></span></span>
+            <span class="theme-count">53件 / 13.9%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ホタルイカ</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:61%; background:#3a7194;"></span></span>
+            <span class="theme-count">49件 / 12.9%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ブリ・寒ブリ</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:21%; background:#3a7194;"></span></span>
+            <span class="theme-count">17件 / 4.5%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ます寿司</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:12%; background:#3a7194;"></span></span>
+            <span class="theme-count">10件 / 2.6%</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <div class="quotes" style="border-left-color:#3a7194;">
+          <div class="quotes-title" style="color:#3a7194;">声の抜粋</div>
+          <ul>
+            
+            <li>白海老の唐揚げはもちろん、シオノコのなめろう、氷見牛のすき焼き、どれも美味しいです。1日目夜のあさりごはんも美味しかったです。氷見産コシヒカリ、美味しいです。</li>
+            
+            <li>寿司専門店の漬けマグロ、穴子寿司が美味しすぎておかわりしました。</li>
+            
+            <li>宇奈月温泉のちょっこし屋で食べた釜めしのライスコロッケがおいしかった。</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="age-row">
+      <div class="age-row-label">
+        <div class="age-row-title">友人・知人</div>
+        <div class="age-row-n">n = 178</div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:23%; background:#1a5454;"></div></div>
+      </div>
+      <div>
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">寿司・刺身</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#1a5454;"></span></span>
+            <span class="theme-count">39件 / 21.9%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ホタルイカ</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:67%; background:#1a5454;"></span></span>
+            <span class="theme-count">26件 / 14.6%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">白えび</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:67%; background:#1a5454;"></span></span>
+            <span class="theme-count">26件 / 14.6%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ベニズワイ・カニ</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:8%; background:#1a5454;"></span></span>
+            <span class="theme-count">3件 / 1.7%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ブリ・寒ブリ</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:8%; background:#1a5454;"></span></span>
+            <span class="theme-count">3件 / 1.7%</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <div class="quotes" style="border-left-color:#1a5454;">
+          <div class="quotes-title" style="color:#1a5454;">声の抜粋</div>
+          <ul>
+            
+            <li>寿司食いねえで飲んだあら汁の魚がめちゃくちゃ大きかったこと</li>
+            
+            <li>ブリがとても美味しく、関東では食べられないもので、感動しました！</li>
+            
+            <li>富山と言ったら昆布じめ。あちらこちらで昆布じめを購入し食べてますが今回初の山菜の昆布じめを発見。美味しかったです。</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="age-row">
+      <div class="age-row-label">
+        <div class="age-row-title">子連れ(未就学児)</div>
+        <div class="age-row-n">n = 89</div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:12%; background:#2d7a7a;"></div></div>
+      </div>
+      <div>
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">寿司・刺身</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#2d7a7a;"></span></span>
+            <span class="theme-count">18件 / 20.2%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">白えび</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:55%; background:#2d7a7a;"></span></span>
+            <span class="theme-count">10件 / 11.2%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ホタルイカ</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:39%; background:#2d7a7a;"></span></span>
+            <span class="theme-count">7件 / 7.9%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ブリ・寒ブリ</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:33%; background:#2d7a7a;"></span></span>
+            <span class="theme-count">6件 / 6.7%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">バイ貝・海産物</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:17%; background:#2d7a7a;"></span></span>
+            <span class="theme-count">3件 / 3.4%</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <div class="quotes" style="border-left-color:#2d7a7a;">
+          <div class="quotes-title" style="color:#2d7a7a;">声の抜粋</div>
+          <ul>
+            
+            <li>チューリップフェアの移動販売ののイチゴのフローズンかき氷が</li>
+            
+            <li>小政寿司で食べたお寿司お刺身。三朗丸のレストランで食べたローストビーフ重。</li>
+            
+            <li>お宿で食べた富山ポークのステーキ(こんなに美味しいとは思わなかった！)と、お宿で食べたとろろ昆布のおにぎり(やはり富山の昆布は最高ですねぇ😊)</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="age-row">
+      <div class="age-row-label">
+        <div class="age-row-title">子連れ(小〜高生)</div>
+        <div class="age-row-n">n = 146</div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:19%; background:#5fa8a8;"></div></div>
+      </div>
+      <div>
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">寿司・刺身</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#5fa8a8;"></span></span>
+            <span class="theme-count">31件 / 21.2%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ホタルイカ</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:75%; background:#5fa8a8;"></span></span>
+            <span class="theme-count">23件 / 15.8%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">白えび</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:35%; background:#5fa8a8;"></span></span>
+            <span class="theme-count">11件 / 7.5%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ます寿司</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:16%; background:#5fa8a8;"></span></span>
+            <span class="theme-count">5件 / 3.4%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">富山ブラック・ラーメン</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:16%; background:#5fa8a8;"></span></span>
+            <span class="theme-count">5件 / 3.4%</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <div class="quotes" style="border-left-color:#5fa8a8;">
+          <div class="quotes-title" style="color:#5fa8a8;">声の抜粋</div>
+          <ul>
+            
+            <li>かに。お寿司でも釜飯でも、酢の物、お刺身でもなにをとっても美味しかった。</li>
+            
+            <li>やはり、新鮮な海の幸を利用した寿司や海鮮丼はとても美味しかったです。</li>
+            
+            <li>滑川のまつりばやし？（回転寿司）で食べたタラの昆布じめこづけのお寿司</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="age-row">
+      <div class="age-row-label">
+        <div class="age-row-title">カップル</div>
+        <div class="age-row-n">n = 86</div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:11%; background:#b08840;"></div></div>
+      </div>
+      <div>
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">寿司・刺身</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#b08840;"></span></span>
+            <span class="theme-count">15件 / 17.4%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">白えび</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:53%; background:#b08840;"></span></span>
+            <span class="theme-count">8件 / 9.3%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ホタルイカ</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:47%; background:#b08840;"></span></span>
+            <span class="theme-count">7件 / 8.1%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">ベニズワイ・カニ</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:33%; background:#b08840;"></span></span>
+            <span class="theme-count">5件 / 5.8%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">のどぐろ</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:20%; background:#b08840;"></span></span>
+            <span class="theme-count">3件 / 3.5%</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <div class="quotes" style="border-left-color:#b08840;">
+          <div class="quotes-title" style="color:#b08840;">声の抜粋</div>
+          <ul>
+            
+            <li>旅館で、季節の山菜や海鮮を食べられて良かった</li>
+            
+            <li>なんといっても寿司です！何食べても美味しい！</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    <h3 class="sub-title">③ 課題・改善要望</h3>
+    
+    
+      
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+    
+    
+    
+    <div class="age-row">
+      <div class="age-row-label">
+        <div class="age-row-title">夫婦</div>
+        <div class="age-row-n">n = 760</div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:100%; background:#0e3550;"></div></div>
+      </div>
+      <div>
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">公共交通の本数・接続</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#0e3550;"></span></span>
+            <span class="theme-count">33件 / 4.3%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">駐車場</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:88%; background:#0e3550;"></span></span>
+            <span class="theme-count">29件 / 3.8%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">混雑・渋滞</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:79%; background:#0e3550;"></span></span>
+            <span class="theme-count">26件 / 3.4%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">気候・服装</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:77%; background:#0e3550;"></span></span>
+            <span class="theme-count">25件 / 3.3%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">飲食店の確保・予約</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:67%; background:#0e3550;"></span></span>
+            <span class="theme-count">22件 / 2.9%</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <div class="quotes" style="border-left-color:#0e3550;">
+          <div class="quotes-title" style="color:#0e3550;">声の抜粋</div>
+          <ul>
+            
+            <li>チューリップ公園の休園日程がホームページに載ったのが出発の４日前だったので、旅行日程を変えられなかった。残念でした</li>
+            
+            <li>富岩運河環水公園でのドローンショーでのスピーカーの音量が大きすぎて、聴覚神経を守るため、耳をふさいだ。ふさいでも、聴けるほどの音量だった</li>
+            
+            <li>夕方道の駅に寄った時に車中泊の方が正面駐車場にいっぱいで、遠くに停車しなければならないのが不便でした。</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="age-row">
+      <div class="age-row-label">
+        <div class="age-row-title">ひとり</div>
+        <div class="age-row-n">n = 234</div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:31%; background:#1d4e6f;"></div></div>
+      </div>
+      <div>
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">公共交通の本数・接続</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#1d4e6f;"></span></span>
+            <span class="theme-count">18件 / 7.7%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">飲食店の確保・予約</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:66%; background:#1d4e6f;"></span></span>
+            <span class="theme-count">12件 / 5.1%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">混雑・渋滞</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:49%; background:#1d4e6f;"></span></span>
+            <span class="theme-count">9件 / 3.8%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">宿泊施設</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:34%; background:#1d4e6f;"></span></span>
+            <span class="theme-count">6件 / 2.6%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">観光案内・情報不足</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:22%; background:#1d4e6f;"></span></span>
+            <span class="theme-count">4件 / 1.7%</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <div class="quotes" style="border-left-color:#1d4e6f;">
+          <div class="quotes-title" style="color:#1d4e6f;">声の抜粋</div>
+          <ul>
+            
+            <li>新幹線の　乗り換えが　とても不安！一度 乗れなかったです。</li>
+            
+            <li>新湊の山の中を1人で歩いてる時に携帯の充電が切れそうで焦りました。  1時間に一本しかないバスに偶然乗れることが多かったのですが、これを何度も逃してたら、計画通りには観光できなかったと思います。</li>
+            
+            <li>我々は車で行きましたが、庄川エリアへアクセスがしにくい</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="age-row">
+      <div class="age-row-label">
+        <div class="age-row-title">大人の家族</div>
+        <div class="age-row-n">n = 380</div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:50%; background:#3a7194;"></div></div>
+      </div>
+      <div>
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">公共交通の本数・接続</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#3a7194;"></span></span>
+            <span class="theme-count">21件 / 5.5%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">駐車場</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:76%; background:#3a7194;"></span></span>
+            <span class="theme-count">16件 / 4.2%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">混雑・渋滞</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:62%; background:#3a7194;"></span></span>
+            <span class="theme-count">13件 / 3.4%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">気候・服装</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:62%; background:#3a7194;"></span></span>
+            <span class="theme-count">13件 / 3.4%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">飲食店の確保・予約</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:58%; background:#3a7194;"></span></span>
+            <span class="theme-count">12件 / 3.2%</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <div class="quotes" style="border-left-color:#3a7194;">
+          <div class="quotes-title" style="color:#3a7194;">声の抜粋</div>
+          <ul>
+            
+            <li>市電があり、道路が狭いので、レンタカーでは移動がし難いと感じました。また、富山駅はレンタカーを借りて、高齢の同乗者を拾いたくても、北口など進入禁止で不便でした。土地勘がないから、どこで歩きに不安がある高齢者を乗せられるのかわからなかった。</li>
+            
+            <li>バス路線がいまひとつ分かりにくく（地理が分かっていないからだと思いますが…）、結局わからず徒歩で行ったりしました。 親切なバスの運転手さんが、バス停ではない所？（バス停かあったのかも）で乗せてくれたり、とにかくバス難しかったです。</li>
+            
+            <li>レンタカーにガソリンを入れるのに19:00を回ったため、営業してないとこがあり、何件か回った。</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="age-row">
+      <div class="age-row-label">
+        <div class="age-row-title">友人・知人</div>
+        <div class="age-row-n">n = 178</div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:23%; background:#1a5454;"></div></div>
+      </div>
+      <div>
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">公共交通の本数・接続</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#1a5454;"></span></span>
+            <span class="theme-count">16件 / 9.0%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">気候・服装</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:50%; background:#1a5454;"></span></span>
+            <span class="theme-count">8件 / 4.5%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">駐車場</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:38%; background:#1a5454;"></span></span>
+            <span class="theme-count">6件 / 3.4%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">宿泊施設</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:24%; background:#1a5454;"></span></span>
+            <span class="theme-count">4件 / 2.2%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">案内表示・標識</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:24%; background:#1a5454;"></span></span>
+            <span class="theme-count">4件 / 2.2%</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <div class="quotes" style="border-left-color:#1a5454;">
+          <div class="quotes-title" style="color:#1a5454;">声の抜粋</div>
+          <ul>
+            
+            <li>高山本線の一部が不通　在来線と新幹線は乗り換えがある</li>
+            
+            <li>ホテルの部屋に、狭いのは仕方ないけど、もう一つ椅子があったら良かったな</li>
+            
+            <li>五箇山を訪れたが、天気と時間が悪かったのか、観光客が少なく寂しい場所であった。 本来の姿を見る事ができたが、人気がなく集落に入って良いのか迷いました。</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="age-row">
+      <div class="age-row-label">
+        <div class="age-row-title">子連れ(未就学児)</div>
+        <div class="age-row-n">n = 89</div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:12%; background:#2d7a7a;"></div></div>
+      </div>
+      <div>
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">公共交通の本数・接続</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#2d7a7a;"></span></span>
+            <span class="theme-count">5件 / 5.6%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">マイカー以外での移動困難</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:61%; background:#2d7a7a;"></span></span>
+            <span class="theme-count">3件 / 3.4%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">飲食店の確保・予約</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:61%; background:#2d7a7a;"></span></span>
+            <span class="theme-count">3件 / 3.4%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">トイレ・休憩施設</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:61%; background:#2d7a7a;"></span></span>
+            <span class="theme-count">3件 / 3.4%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">混雑・渋滞</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:39%; background:#2d7a7a;"></span></span>
+            <span class="theme-count">2件 / 2.2%</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <div class="quotes" style="border-left-color:#2d7a7a;">
+          <div class="quotes-title" style="color:#2d7a7a;">声の抜粋</div>
+          <ul>
+            
+            <li>米騒動発祥の地に行きましたが、駐車場があるのかわからなくて、困りました。</li>
+            
+            <li>食事をするところが少ない。予約以外入れないところもあり、お店が見つけられず旅行なのにラーメンを食べた。 こちらの下準備が足りなかったのだと思う。</li>
+            
+            <li>宿泊先にエレベーターがなかったので、高齢の母が2階にあがるのが大変だった</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="age-row">
+      <div class="age-row-label">
+        <div class="age-row-title">子連れ(小〜高生)</div>
+        <div class="age-row-n">n = 146</div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:19%; background:#5fa8a8;"></div></div>
+      </div>
+      <div>
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">混雑・渋滞</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#5fa8a8;"></span></span>
+            <span class="theme-count">9件 / 6.2%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">公共交通の本数・接続</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#5fa8a8;"></span></span>
+            <span class="theme-count">9件 / 6.2%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">飲食店の確保・予約</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:77%; background:#5fa8a8;"></span></span>
+            <span class="theme-count">7件 / 4.8%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">駐車場</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:55%; background:#5fa8a8;"></span></span>
+            <span class="theme-count">5件 / 3.4%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">マイカー以外での移動困難</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:34%; background:#5fa8a8;"></span></span>
+            <span class="theme-count">3件 / 2.1%</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <div class="quotes" style="border-left-color:#5fa8a8;">
+          <div class="quotes-title" style="color:#5fa8a8;">声の抜粋</div>
+          <ul>
+            
+            <li>交通手段が複雑に感じた。親切に教えていただけたが 電車に乗るときに特に複雑に思えた。</li>
+            
+            <li>道の駅のキャパシティが低いので、 ゴールデンウィークやお盆などは混雑して、食べたいものが食べれませんでした。</li>
+            
+            <li>宿の予約をしないで旅行に行ったので、当日の宿探しが大変だった。 道の駅、観光案内所等に見てすぐ分かる空き宿情報あるといいですね。</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="age-row">
+      <div class="age-row-label">
+        <div class="age-row-title">カップル</div>
+        <div class="age-row-n">n = 86</div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:11%; background:#b08840;"></div></div>
+      </div>
+      <div>
+        <ul class="theme-list">
+          
+          <li>
+            <span class="theme-name">駐車場</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#b08840;"></span></span>
+            <span class="theme-count">3件 / 3.5%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">混雑・渋滞</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:66%; background:#b08840;"></span></span>
+            <span class="theme-count">2件 / 2.3%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">公共交通の本数・接続</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:66%; background:#b08840;"></span></span>
+            <span class="theme-count">2件 / 2.3%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">マイカー以外での移動困難</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:66%; background:#b08840;"></span></span>
+            <span class="theme-count">2件 / 2.3%</span>
+          </li>
+          
+          <li>
+            <span class="theme-name">キャッシュレス・ICカード</span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:34%; background:#b08840;"></span></span>
+            <span class="theme-count">1件 / 1.2%</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <div class="quotes" style="border-left-color:#b08840;">
+          <div class="quotes-title" style="color:#b08840;">声の抜粋</div>
+          <ul>
+            
+            <li>車があればどこでも行けるが車がないとどこにもいけない。車での移動が長時間になりがち</li>
+            
+            <li>市内の片側二車線道路が少し狭く慣れていないため車で走りづらく感じました。</li>
+            
+            <li>GWで温泉のしっかりある宿には泊まれなかった。</li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+  </section>
+
+</div>
+
+<section id="chap7" class="action-section">
+  <div class="container">
+    <div class="section-label">CHAPTER 07</div>
+    <h2 class="section-title">アクション提案</h2>
+    <p class="section-lede">本月の集計では<strong>二次交通・公共交通の不便</strong>が困りごとの17.9％を占め最大の課題となった。これを踏まえ、季節イベント期の交通対策とインフラ改善を最優先軸に据えつつ、食・絶景を核とした情報発信と各客層への提案を以下に整理する。</p>
+
+    <div class="action-cards">
+      
+      <div class="action-card">
+        <div class="action-num">PROPOSAL 01</div>
+        <div class="action-title">「雪の大谷」「チューリップ」<br>繁忙期の交通・駐車場対策</div>
+        <div class="action-body">開通直後のアルペンルートや大型連休のチューリップフェアでは、シャトルバスの乗り換え時間の短さや駐車場混雑への不満が寄せられた。<strong>イベント期間限定の増便・臨時駐車場・乗継ダイヤの最適化</strong>を関係機関と連携して整え、来訪のストレスを軽減する。</div>
+        <div class="action-target"><strong>主要ターゲット</strong>県外からの夫婦旅・大人の家族（マイカー／公共交通双方）</div>
+      </div>
+      
+      <div class="action-card">
+        <div class="action-num">PROPOSAL 02</div>
+        <div class="action-title">富山湾の旬を束ねる<br>食の情報集約発信</div>
+        <div class="action-body">寿司・ホタルイカ・白えびが食回答の上位を独占する一方、<strong>営業時間や予約・行列</strong>への不満も目立つ。旬の魚種カレンダー、提供店舗、予約導線を一元化した情報発信により、「食目的の来訪」を確実な満足へとつなげる。</div>
+        <div class="action-target"><strong>主要ターゲット</strong>食を主目的とする県外旅行者全般</div>
+      </div>
+      
+      <div class="action-card">
+        <div class="action-num">PROPOSAL 03</div>
+        <div class="action-title">公共交通のみで巡れる<br>二次交通インフラの強化</div>
+        <div class="action-body">「電車・バスの本数が少なく公共交通だけでは不便」との声が困りごとの最多。<strong>主要観光地を結ぶ路線・便数の拡充、わかりやすい乗継案内、企画乗車券</strong>など、車を使わない来訪者でも周遊できる仕組みの中長期的な整備が求められる。</div>
+        <div class="action-target"><strong>主要ターゲット</strong>ひとり旅・若年層・公共交通利用者</div>
+      </div>
+      
+      <div class="action-card">
+        <div class="action-num">PROPOSAL 04</div>
+        <div class="action-title">成熟層の再訪を促す<br>深掘り体験の提案</div>
+        <div class="action-body">回答者の<strong>68.4％が50代以上</strong>、夫婦旅が最多を占める。定番に加え、富山湾鮨や地酒のペアリング、立山の自然散策、温泉滞在など<strong>滞在型・体験型の深掘りプラン</strong>を提示し、複数回の来訪につなげる。</div>
+        <div class="action-target"><strong>主要ターゲット</strong>40代以上の夫婦旅・大人家族（熟年層）</div>
+      </div>
+      
+      <div class="action-card">
+        <div class="action-num">PROPOSAL 05</div>
+        <div class="action-title">子連れでも安心な<br>ファミリー向け情報の充実</div>
+        <div class="action-body">子連れ家族は計<strong>12.1％</strong>、平均年齢も他層より若い。授乳・おむつ替え環境、ベビーカー対応、待ち時間の少ない食事処など<strong>家族目線の実用情報</strong>を整備し、混雑・行列への不安を和らげることで来訪のハードルを下げる。</div>
+        <div class="action-target"><strong>主要ターゲット</strong>未就学児〜高校生の子をもつ子連れ家族</div>
+      </div>
+      
+      <div class="action-card">
+        <div class="action-num">PROPOSAL 06</div>
+        <div class="action-title">若年層・ひとり旅を呼び込む<br>体験コンテンツの拡充</div>
+        <div class="action-body">20〜30代は計<strong>15.2％</strong>と少数だが、伸びしろの大きい層。ホタルイカ観察やガラス工芸、富岩運河の水辺空間など<strong>SNS映えする体験</strong>を磨き、公共交通でアクセスできる動線とあわせて発信することで、新規・若年・将来的な外国人来訪を取り込む。</div>
+        <div class="action-target"><strong>主要ターゲット</strong>20〜30代のひとり旅・友人旅、将来的なインバウンド</div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<footer class="report-footer">
+  <div class="footer-mark">― 富 山 ―</div>
+  <div>富山県観光ウェブアンケート 令和8年5月分 月次レポート</div>
+  <div style="margin-top: 8px; opacity: 0.7;">本レポートは令和8年5月のアンケート回答1,945件に基づき作成されました。<br>調査主体：公益社団法人とやま観光推進機構</div>
+</footer>
+
+<script>
+Chart.defaults.font.family = "'Noto Sans JP', sans-serif";
+Chart.defaults.font.size = 12;
+Chart.defaults.color = '#2c3e50';
+Chart.defaults.plugins.legend.labels.boxWidth = 12;
+Chart.defaults.plugins.legend.labels.padding = 14;
+
+const colors = {
+  ink: '#0d1b2a', primary: '#1d4e6f', primaryDeep: '#0e3550',
+  primarySoft: '#3a7194', teal: '#2d7a7a', tealDeep: '#1a5454',
+  tealSoft: '#5fa8a8', tealMist: '#b8d8d8', gold: '#b08840',
+  warn: '#c0563c', rule: '#c9d6db'
+};
+const palette = [colors.primary, colors.teal, colors.primarySoft, colors.tealSoft,
+                 colors.gold, colors.primaryDeep, colors.tealDeep, colors.tealMist, '#8a9fa8'];
+
+// === ここからデータ部はテンプレート差し込み ===
+const REGION_DATA = {"labels": ["\u5bcc\u5c71\u770c\u5185", "\u5317\u9678\uff08\u77f3\u5ddd\u30fb\u798f\u4e95\u30fb\u65b0\u6f5f\uff09", "\u95a2\u6771", "\u4e2d\u90e8", "\u8fd1\u757f", "\u5317\u6d77\u9053\u30fb\u6771\u5317", "\u4e2d\u56fd", "\u56db\u56fd", "\u4e5d\u5dde\u30fb\u6c96\u7e04"], "values": [293, 216, 528, 388, 369, 62, 33, 20, 36]};
+const GENDER_DATA = {"labels": ["\u5973\u6027", "\u7537\u6027", "\u7121\u56de\u7b54\u30fb\u305d\u306e\u4ed6"], "values": [1136, 790, 19]};
+const AGE_DATA = {"labels": ["10\u4ee3\u4ee5\u4e0b", "20\u4ee3", "30\u4ee3", "40\u4ee3", "50\u4ee3", "60\u4ee3", "70\u4ee3\u4ee5\u4e0a"], "values": [20, 111, 185, 299, 575, 540, 215]};
+const COMPANION_DATA = {"labels": ["\u592b\u5a66", "\u3072\u3068\u308a", "\u5927\u4eba\u306e\u5bb6\u65cf", "\u53cb\u4eba\u30fb\u77e5\u4eba", "\u5b50\u9023\u308c(\u672a\u5c31\u5b66\u5150)", "\u5b50\u9023\u308c(\u5c0f\u301c\u9ad8\u751f)", "\u30ab\u30c3\u30d7\u30eb", "\u56e3\u4f53\u30fb\u8077\u5834", "\u305d\u306e\u4ed6"], "values": [760, 234, 380, 178, 89, 146, 86, 39, 33]};
+const STAY_DATA = {"labels": ["1\u6cca", "2\u6cca", "3\u6cca", "4\u6cca\u4ee5\u4e0a", "\u5bbf\u6cca\u3057\u306a\u3044"], "values": [904, 424, 137, 78, 89]};
+const STAY_LOC_DATA = {"labels": ["\u5bcc\u5c71\u5e02", "\u6c37\u898b\u5e02", "\u9ad8\u5ca1\u5e02", "\u9ed2\u90e8\u5e02", "\u9b5a\u6d25\u5e02", "\u7acb\u5c71\u753a", "\u783a\u6ce2\u5e02", "\u5357\u783a\u5e02", "\u5c04\u6c34\u5e02", "\u6ed1\u5ddd\u5e02"], "values": [631, 280, 254, 181, 149, 137, 134, 67, 52, 43]};
+const FOOD_ALL = {"labels": ["\u5bff\u53f8\u30fb\u523a\u8eab", "\u30db\u30bf\u30eb\u30a4\u30ab", "\u767d\u3048\u3073", "\u30d6\u30ea\u30fb\u5bd2\u30d6\u30ea", "\u307e\u3059\u5bff\u53f8", "\u30d9\u30cb\u30ba\u30ef\u30a4\u30fb\u30ab\u30cb", "\u5bcc\u5c71\u30d6\u30e9\u30c3\u30af\u30fb\u30e9\u30fc\u30e1\u30f3", "\u6606\u5e03\u95a2\u9023", "\u30d0\u30a4\u8c9d\u30fb\u6d77\u7523\u7269", "\u306e\u3069\u3050\u308d", "\u30b9\u30a4\u30fc\u30c4\u30fb\u30d1\u30f3", "\u65e5\u672c\u9152", "\u6c37\u898b\u3046\u3069\u3093"], "values": [438, 242, 215, 63, 42, 36, 33, 28, 23, 22, 17, 12, 12]};
+const SIGHT_ALL = {"labels": ["\u96ea\u306e\u5927\u8c37\u30fb\u7acb\u5c71\u9ed2\u90e8", "\u96e8\u6674\u6d77\u5cb8", "\u30c1\u30e5\u30fc\u30ea\u30c3\u30d7\u30d5\u30a7\u30a2\u30fb\u783a\u6ce2", "\u6e29\u6cc9", "\u7acb\u5c71\u9023\u5cf0\u306e\u773a\u671b", "\u9ed2\u90e8\u5ce1\u8c37\u30fb\u5b87\u5948\u6708", "\u6c37\u898b", "\u30db\u30bf\u30eb\u30a4\u30ab\u95a2\u9023\u4f53\u9a13", "\u30ac\u30e9\u30b9\u7f8e\u8853\u9928", "\u5bcc\u5ca9\u904b\u6cb3\u30fb\u30b9\u30bf\u30d0", "\u745e\u9f8d\u5bfa\u30fb\u9ad8\u5ca1", "\u6d77\u738b\u4e38\u30d1\u30fc\u30af", "\u30d2\u30b9\u30a4\u6d77\u5cb8", "\u4e94\u7b87\u5c71\u30fb\u5408\u638c\u9020\u308a", "\u9b5a\u6d25\u6c34\u65cf\u9928"], "values": [180, 111, 99, 91, 70, 65, 53, 51, 41, 36, 32, 30, 27, 17, 8]};
+
+// === チャート: 居住地 ===
+new Chart(document.getElementById('chartRegion'), {
+  type: 'doughnut',
+  data: { labels: REGION_DATA.labels, datasets: [{ data: REGION_DATA.values, backgroundColor: palette, borderColor: '#ffffff', borderWidth: 2 }] },
+  options: { responsive: true, maintainAspectRatio: false, cutout: '55%',
+    plugins: { legend: { position: 'right', labels: { font: { size: 11 } } },
+      tooltip: { callbacks: { label: (ctx) => { const total = ctx.dataset.data.reduce((a,b)=>a+b, 0); const pct = (ctx.parsed / total * 100).toFixed(1); return `${ctx.label}: ${ctx.parsed}件 (${pct}%)`; } } }
+    }
+  }
+});
+
+// === チャート: 性別 ===
+new Chart(document.getElementById('chartGender'), {
+  type: 'doughnut',
+  data: { labels: GENDER_DATA.labels, datasets: [{ data: GENDER_DATA.values, backgroundColor: [colors.teal, colors.primary, colors.rule], borderColor: '#ffffff', borderWidth: 2 }] },
+  options: { responsive: true, maintainAspectRatio: false, cutout: '55%',
+    plugins: { legend: { position: 'right' },
+      tooltip: { callbacks: { label: (ctx) => { const total = ctx.dataset.data.reduce((a,b)=>a+b, 0); const pct = (ctx.parsed / total * 100).toFixed(1); return `${ctx.label}: ${ctx.parsed}件 (${pct}%)`; } } }
+    }
+  }
+});
+
+// === チャート: 年代 ===
+new Chart(document.getElementById('chartAge'), {
+  type: 'bar',
+  data: { labels: AGE_DATA.labels, datasets: [{ data: AGE_DATA.values, backgroundColor: colors.primary, borderRadius: 0, barPercentage: 0.7 }] },
+  options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } },
+    scales: { y: { beginAtZero: true, grid: { color: '#e1eaee' } }, x: { grid: { display: false } } }
+  }
+});
+
+// === チャート: 同行者 ===
+new Chart(document.getElementById('chartCompanion'), {
+  type: 'bar',
+  data: { labels: COMPANION_DATA.labels, datasets: [{ data: COMPANION_DATA.values, backgroundColor: colors.teal, borderRadius: 0, barPercentage: 0.8 }] },
+  options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } },
+    scales: { x: { beginAtZero: true, grid: { color: '#e1eaee' } }, y: { grid: { display: false } } }
+  }
+});
+
+// === チャート: 県内宿泊数 ===
+new Chart(document.getElementById('chartStay'), {
+  type: 'bar',
+  data: { labels: STAY_DATA.labels, datasets: [{ data: STAY_DATA.values, backgroundColor: colors.primarySoft, borderRadius: 0, barPercentage: 0.65 }] },
+  options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } },
+    scales: { y: { beginAtZero: true, grid: { color: '#e1eaee' } }, x: { grid: { display: false } } }
+  }
+});
+
+// === チャート: 宿泊先 ===
+new Chart(document.getElementById('chartStayLoc'), {
+  type: 'bar',
+  data: { labels: STAY_LOC_DATA.labels, datasets: [{ data: STAY_LOC_DATA.values, backgroundColor: colors.tealSoft, borderRadius: 0, barPercentage: 0.7 }] },
+  options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } },
+    scales: { x: { beginAtZero: true, grid: { color: '#e1eaee' } }, y: { grid: { display: false } } }
+  }
+});
+
+// === チャート: 食 ===
+new Chart(document.getElementById('chartFood'), {
+  type: 'bar',
+  data: { labels: FOOD_ALL.labels,
+    datasets: [{ label: '言及件数', data: FOOD_ALL.values,
+      backgroundColor: (ctx) => { const v = ctx.parsed.x;
+        if (v >= 300) return colors.primaryDeep;
+        if (v >= 150) return colors.teal;
+        if (v >= 40) return colors.primarySoft;
+        return colors.tealSoft;
+      }, borderRadius: 0, barPercentage: 0.75 }] },
+  options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } },
+    scales: { x: { beginAtZero: true, grid: { color: '#e1eaee' } }, y: { grid: { display: false } } }
+  }
+});
+
+// === チャート: 観光 ===
+new Chart(document.getElementById('chartSight'), {
+  type: 'bar',
+  data: { labels: SIGHT_ALL.labels,
+    datasets: [{ label: '言及件数', data: SIGHT_ALL.values,
+      backgroundColor: (ctx) => { const v = ctx.parsed.x;
+        if (v >= 100) return colors.primaryDeep;
+        if (v >= 70) return colors.teal;
+        if (v >= 40) return colors.primarySoft;
+        return colors.tealSoft;
+      }, borderRadius: 0, barPercentage: 0.75 }] },
+  options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } },
+    scales: { x: { beginAtZero: true, grid: { color: '#e1eaee' } }, y: { grid: { display: false } } }
+  }
+});
+
+// === サイドバー制御スクリプト ===
+document.addEventListener('DOMContentLoaded', function() {
+  const sidebar = document.getElementById('sidebar');
+  const sidebarToggle = document.getElementById('sidebarToggle');
+  const sidebarClose = document.getElementById('sidebarClose');
+  const sidebarOverlay = document.getElementById('sidebarOverlay');
+  const sidebarLinks = sidebar.querySelectorAll('a');
+
+  function openSidebar() {
+    sidebar.classList.add('open');
+    sidebarOverlay.classList.add('open');
+  }
+
+  function closeSidebar() {
+    sidebar.classList.remove('open');
+    sidebarOverlay.classList.remove('open');
+  }
+
+  // ボタンとオーバーレイのクリックイベント
+  sidebarToggle.addEventListener('click', openSidebar);
+  sidebarClose.addEventListener('click', closeSidebar);
+  sidebarOverlay.addEventListener('click', closeSidebar);
+
+  // サイドバー内のリンクをクリックした時、自動でサイドバーを閉じる
+  sidebarLinks.forEach(link => {
+    link.addEventListener('click', closeSidebar);
+  });
+});
+</script>
+
+</body>
+</html>
