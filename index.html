@@ -17,16 +17,21 @@
     --paper-card: #ffffff;
     --rule: #c9d6db;
     --rule-soft: #e1eaee;
-    --primary: #1d4e6f;
-    --primary-deep: #0e3550;
-    --primary-soft: #3a7194;
-    --teal: #2d7a7a;
-    --teal-deep: #1a5454;
-    --teal-soft: #5fa8a8;
-    --teal-mist: #b8d8d8;
+    
+    /* インディゴブルー基調 (#253394) */
+    --primary: #253394;
+    --primary-deep: #161e5c;
+    --primary-soft: #4d5dbf;
+    
+    /* ティール基調 (#41B4B1) */
+    --teal: #41b4b1;
+    --teal-deep: #237371;
+    --teal-soft: #7dd1cf;
+    --teal-mist: #c0ebec;
+    
     --gold: #b08840;
     --warn: #c0563c;
-    --positive: #2d7a7a;
+    --positive: #41b4b1;
     --paper-accent: #e8f1f3;
     --paper-tint: #d8e6eb;
   }
@@ -42,8 +47,8 @@
     font-feature-settings: "palt";
     font-size: 15px;
     background-image:
-      radial-gradient(circle at 20% 10%, rgba(29,78,111,0.05) 0%, transparent 40%),
-      radial-gradient(circle at 80% 80%, rgba(45,122,122,0.05) 0%, transparent 40%);
+      radial-gradient(circle at 20% 10%, rgba(37,51,148,0.05) 0%, transparent 40%),
+      radial-gradient(circle at 80% 80%, rgba(65,180,177,0.05) 0%, transparent 40%);
   }
 
   /* ===== ヘッダー ===== */
@@ -62,7 +67,7 @@
     width: 360px;
     height: 100%;
     background:
-      linear-gradient(135deg, transparent 40%, rgba(95,168,168,0.18) 50%, transparent 60%),
+      linear-gradient(135deg, transparent 40%, rgba(125,209,207,0.18) 50%, transparent 60%),
       linear-gradient(45deg, transparent 40%, rgba(176,136,64,0.10) 50%, transparent 60%);
     pointer-events: none;
   }
@@ -164,7 +169,7 @@
   .summary-box li { counter-increment: summary; padding: 14px 0 14px 50px; position: relative; border-bottom: 1px dashed var(--rule); line-height: 1.85; color: var(--ink-soft); }
   .summary-box li:last-child { border-bottom: none; }
   .summary-box li::before { content: counter(summary, decimal-leading-zero); position: absolute; left: 0; top: 14px; font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 700; color: var(--teal); font-size: 22px; line-height: 1; }
-  .summary-box strong { color: var(--ink); font-weight: 700; background: linear-gradient(transparent 70%, rgba(95,168,168,0.35) 70%); padding: 0 2px; }
+  .summary-box strong { color: var(--ink); font-weight: 700; background: linear-gradient(transparent 70%, rgba(125,209,207,0.35) 70%); padding: 0 2px; }
 
   /* チャート */
   .chart-block { background: var(--paper-card); border: 1px solid var(--rule); padding: 30px 32px 28px; margin: 24px 0; }
@@ -198,8 +203,8 @@
 
   /* 引用 */
   .quotes { margin: 18px 0 6px; padding: 18px 22px; background: var(--paper-accent); border-left: 3px solid var(--primary); }
-  .quotes.female { border-left-color: var(--teal); background: linear-gradient(90deg, rgba(95,168,168,0.10), transparent 80%); }
-  .quotes.male { border-left-color: var(--primary); background: linear-gradient(90deg, rgba(58,113,148,0.10), transparent 80%); }
+  .quotes.female { border-left-color: var(--teal); background: linear-gradient(90deg, rgba(125,209,207,0.10), transparent 80%); }
+  .quotes.male { border-left-color: var(--primary); background: linear-gradient(90deg, rgba(77,93,191,0.10), transparent 80%); }
   .quotes-title { font-size: 11px; letter-spacing: 0.2em; color: var(--primary); margin-bottom: 10px; font-weight: 700; }
   .quotes.female .quotes-title { color: var(--teal-deep); }
   .quotes.male .quotes-title { color: var(--primary-deep); }
@@ -449,7 +454,7 @@
 
 <aside id="sidebar" class="sidebar">
   <div class="sidebar-header">
-    <div class="sidebar-title">目　次</div>
+    <div class="sidebar-title">目 次</div>
     <button id="sidebarClose" class="sidebar-close" aria-label="閉じる">×</button>
   </div>
   <nav class="sidebar-nav">
@@ -466,7 +471,7 @@
 </aside>
 <header class="report-header">
   <div class="header-tag">TOYAMA TOURISM WEB SURVEY ｜ MONTHLY REPORT</div>
-  <h1 class="header-title">富山県観光ウェブアンケート<br>令和8年5月分　月次レポート</h1>
+  <h1 class="header-title">富山県観光ウェブアンケート<br>令和8年5月分 月次レポート</h1>
   <p class="header-subtitle">残雪輝く、立山と富山湾の初夏<span class="accent"> 「雪の回廊・春の海の幸」の月。</span></p>
   <div class="header-meta">
     <span><strong>集計期間</strong>令和8年5月</span>
@@ -479,7 +484,7 @@
 <div class="container">
 
   <nav class="toc">
-    <div class="toc-title">目　次</div>
+    <div class="toc-title">目 次</div>
     <ol>
       <li><a href="#chap1">5月の概況と要旨</a></li>
       <li><a href="#chap2">回答者プロフィール</a></li>
@@ -1104,46 +1109,46 @@
       <div class="age-row-label">
         <div class="age-row-title">20代</div>
         <div class="age-row-n">n = 111</div>
-        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:19%; background:#5fa8a8;"></div></div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:19%; background:#7dd1cf;"></div></div>
       </div>
       <div>
         <ul class="theme-list">
           
           <li>
             <span class="theme-name">雪の大谷・立山黒部</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#5fa8a8;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#7dd1cf;"></span></span>
             <span class="theme-count">9件 / 8.1%</span>
           </li>
           
           <li>
             <span class="theme-name">チューリップフェア・砺波</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:67%; background:#5fa8a8;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:67%; background:#7dd1cf;"></span></span>
             <span class="theme-count">6件 / 5.4%</span>
           </li>
           
           <li>
             <span class="theme-name">温泉</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:67%; background:#5fa8a8;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:67%; background:#7dd1cf;"></span></span>
             <span class="theme-count">6件 / 5.4%</span>
           </li>
           
           <li>
             <span class="theme-name">黒部峡谷・宇奈月</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:44%; background:#5fa8a8;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:44%; background:#7dd1cf;"></span></span>
             <span class="theme-count">4件 / 3.6%</span>
           </li>
           
           <li>
             <span class="theme-name">ガラス美術館</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:44%; background:#5fa8a8;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:44%; background:#7dd1cf;"></span></span>
             <span class="theme-count">4件 / 3.6%</span>
           </li>
           
         </ul>
       </div>
       <div>
-        <div class="quotes" style="border-left-color:#5fa8a8;">
-          <div class="quotes-title" style="color:#5fa8a8;">声の抜粋</div>
+        <div class="quotes" style="border-left-color:#7dd1cf;">
+          <div class="quotes-title" style="color:#7dd1cf;">声の抜粋</div>
           <ul>
             
             <li>チューリップが咲き誇る、となみチューリップフェアの景色</li>
@@ -1166,46 +1171,46 @@
       <div class="age-row-label">
         <div class="age-row-title">30代</div>
         <div class="age-row-n">n = 185</div>
-        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:32%; background:#2d7a7a;"></div></div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:32%; background:#41b4b1;"></div></div>
       </div>
       <div>
         <ul class="theme-list">
           
           <li>
             <span class="theme-name">チューリップフェア・砺波</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#2d7a7a;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#41b4b1;"></span></span>
             <span class="theme-count">11件 / 5.9%</span>
           </li>
           
           <li>
             <span class="theme-name">温泉</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:73%; background:#2d7a7a;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:73%; background:#41b4b1;"></span></span>
             <span class="theme-count">8件 / 4.3%</span>
           </li>
           
           <li>
             <span class="theme-name">雪の大谷・立山黒部</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:73%; background:#2d7a7a;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:73%; background:#41b4b1;"></span></span>
             <span class="theme-count">8件 / 4.3%</span>
           </li>
           
           <li>
             <span class="theme-name">雨晴海岸</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:73%; background:#2d7a7a;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:73%; background:#41b4b1;"></span></span>
             <span class="theme-count">8件 / 4.3%</span>
           </li>
           
           <li>
             <span class="theme-name">ホタルイカ関連体験</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:64%; background:#2d7a7a;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:64%; background:#41b4b1;"></span></span>
             <span class="theme-count">7件 / 3.8%</span>
           </li>
           
         </ul>
       </div>
       <div>
-        <div class="quotes" style="border-left-color:#2d7a7a;">
-          <div class="quotes-title" style="color:#2d7a7a;">声の抜粋</div>
+        <div class="quotes" style="border-left-color:#41b4b1;">
+          <div class="quotes-title" style="color:#41b4b1;">声の抜粋</div>
           <ul>
             
             <li>ホタルイカミュージアムでホタルイカに触れたり、食べたりできたこと。</li>
@@ -1228,46 +1233,46 @@
       <div class="age-row-label">
         <div class="age-row-title">40代</div>
         <div class="age-row-n">n = 299</div>
-        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:52%; background:#1a5454;"></div></div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:52%; background:#237371;"></div></div>
       </div>
       <div>
         <ul class="theme-list">
           
           <li>
             <span class="theme-name">雪の大谷・立山黒部</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#1a5454;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#237371;"></span></span>
             <span class="theme-count">22件 / 7.4%</span>
           </li>
           
           <li>
             <span class="theme-name">ホタルイカ関連体験</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:73%; background:#1a5454;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:73%; background:#237371;"></span></span>
             <span class="theme-count">16件 / 5.4%</span>
           </li>
           
           <li>
             <span class="theme-name">チューリップフェア・砺波</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:68%; background:#1a5454;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:68%; background:#237371;"></span></span>
             <span class="theme-count">15件 / 5.0%</span>
           </li>
           
           <li>
             <span class="theme-name">雨晴海岸</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:68%; background:#1a5454;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:68%; background:#237371;"></span></span>
             <span class="theme-count">15件 / 5.0%</span>
           </li>
           
           <li>
             <span class="theme-name">温泉</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:58%; background:#1a5454;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:58%; background:#237371;"></span></span>
             <span class="theme-count">13件 / 4.3%</span>
           </li>
           
         </ul>
       </div>
       <div>
-        <div class="quotes" style="border-left-color:#1a5454;">
-          <div class="quotes-title" style="color:#1a5454;">声の抜粋</div>
+        <div class="quotes" style="border-left-color:#237371;">
+          <div class="quotes-title" style="color:#237371;">声の抜粋</div>
           <ul>
             
             <li>トロッコ列車に乗るために一番前で改札に並んでいたら、駅員さんが切符を切る体験を子供にさせてくれたこと。</li>
@@ -1290,46 +1295,46 @@
       <div class="age-row-label">
         <div class="age-row-title">50代</div>
         <div class="age-row-n">n = 575</div>
-        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:100%; background:#3a7194;"></div></div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:100%; background:#4d5dbf;"></div></div>
       </div>
       <div>
         <ul class="theme-list">
           
           <li>
             <span class="theme-name">雪の大谷・立山黒部</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#3a7194;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#4d5dbf;"></span></span>
             <span class="theme-count">62件 / 10.8%</span>
           </li>
           
           <li>
             <span class="theme-name">雨晴海岸</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:50%; background:#3a7194;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:50%; background:#4d5dbf;"></span></span>
             <span class="theme-count">31件 / 5.4%</span>
           </li>
           
           <li>
             <span class="theme-name">温泉</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:46%; background:#3a7194;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:46%; background:#4d5dbf;"></span></span>
             <span class="theme-count">29件 / 5.0%</span>
           </li>
           
           <li>
             <span class="theme-name">チューリップフェア・砺波</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:39%; background:#3a7194;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:39%; background:#4d5dbf;"></span></span>
             <span class="theme-count">24件 / 4.2%</span>
           </li>
           
           <li>
             <span class="theme-name">氷見</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:31%; background:#3a7194;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:31%; background:#4d5dbf;"></span></span>
             <span class="theme-count">19件 / 3.3%</span>
           </li>
           
         </ul>
       </div>
       <div>
-        <div class="quotes" style="border-left-color:#3a7194;">
-          <div class="quotes-title" style="color:#3a7194;">声の抜粋</div>
+        <div class="quotes" style="border-left-color:#4d5dbf;">
+          <div class="quotes-title" style="color:#4d5dbf;">声の抜粋</div>
           <ul>
             
             <li>クロスランド小谷部で孫とタワーに登ったり親子でミニSLに乗りました</li>
@@ -1352,46 +1357,46 @@
       <div class="age-row-label">
         <div class="age-row-title">60代</div>
         <div class="age-row-n">n = 540</div>
-        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:94%; background:#1d4e6f;"></div></div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:94%; background:#253394;"></div></div>
       </div>
       <div>
         <ul class="theme-list">
           
           <li>
             <span class="theme-name">雪の大谷・立山黒部</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#1d4e6f;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#253394;"></span></span>
             <span class="theme-count">63件 / 11.7%</span>
           </li>
           
           <li>
             <span class="theme-name">雨晴海岸</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:59%; background:#1d4e6f;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:59%; background:#253394;"></span></span>
             <span class="theme-count">37件 / 6.9%</span>
           </li>
           
           <li>
             <span class="theme-name">温泉</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:48%; background:#1d4e6f;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:48%; background:#253394;"></span></span>
             <span class="theme-count">30件 / 5.6%</span>
           </li>
           
           <li>
             <span class="theme-name">チューリップフェア・砺波</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:44%; background:#1d4e6f;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:44%; background:#253394;"></span></span>
             <span class="theme-count">28件 / 5.2%</span>
           </li>
           
           <li>
             <span class="theme-name">立山連峰の眺望</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:41%; background:#1d4e6f;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:41%; background:#253394;"></span></span>
             <span class="theme-count">26件 / 4.8%</span>
           </li>
           
         </ul>
       </div>
       <div>
-        <div class="quotes" style="border-left-color:#1d4e6f;">
-          <div class="quotes-title" style="color:#1d4e6f;">声の抜粋</div>
+        <div class="quotes" style="border-left-color:#253394;">
+          <div class="quotes-title" style="color:#253394;">声の抜粋</div>
           <ul>
             
             <li>初めての温泉（大岩不動の湯）が見つけられて良かった。</li>
@@ -1414,46 +1419,46 @@
       <div class="age-row-label">
         <div class="age-row-title">70代以上</div>
         <div class="age-row-n">n = 215</div>
-        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:37%; background:#0e3550;"></div></div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:37%; background:#161e5c;"></div></div>
       </div>
       <div>
         <ul class="theme-list">
           
           <li>
             <span class="theme-name">チューリップフェア・砺波</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#0e3550;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#161e5c;"></span></span>
             <span class="theme-count">15件 / 7.0%</span>
           </li>
           
           <li>
             <span class="theme-name">雨晴海岸</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#0e3550;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#161e5c;"></span></span>
             <span class="theme-count">15件 / 7.0%</span>
           </li>
           
           <li>
             <span class="theme-name">雪の大谷・立山黒部</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:93%; background:#0e3550;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:93%; background:#161e5c;"></span></span>
             <span class="theme-count">14件 / 6.5%</span>
           </li>
           
           <li>
             <span class="theme-name">立山連峰の眺望</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:73%; background:#0e3550;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:73%; background:#161e5c;"></span></span>
             <span class="theme-count">11件 / 5.1%</span>
           </li>
           
           <li>
             <span class="theme-name">氷見</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:60%; background:#0e3550;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:60%; background:#161e5c;"></span></span>
             <span class="theme-count">9件 / 4.2%</span>
           </li>
           
         </ul>
       </div>
       <div>
-        <div class="quotes" style="border-left-color:#0e3550;">
-          <div class="quotes-title" style="color:#0e3550;">声の抜粋</div>
+        <div class="quotes" style="border-left-color:#161e5c;">
+          <div class="quotes-title" style="color:#161e5c;">声の抜粋</div>
           <ul>
             
             <li>室堂での絶景を背にしての雪合戦ごっこ。童心に戻れました</li>
@@ -1503,46 +1508,46 @@
       <div class="age-row-label">
         <div class="age-row-title">20代</div>
         <div class="age-row-n">n = 111</div>
-        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:19%; background:#5fa8a8;"></div></div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:19%; background:#7dd1cf;"></div></div>
       </div>
       <div>
         <ul class="theme-list">
           
           <li>
             <span class="theme-name">寿司・刺身</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#5fa8a8;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#7dd1cf;"></span></span>
             <span class="theme-count">21件 / 18.9%</span>
           </li>
           
           <li>
             <span class="theme-name">ホタルイカ</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:62%; background:#5fa8a8;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:62%; background:#7dd1cf;"></span></span>
             <span class="theme-count">13件 / 11.7%</span>
           </li>
           
           <li>
             <span class="theme-name">白えび</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:29%; background:#5fa8a8;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:29%; background:#7dd1cf;"></span></span>
             <span class="theme-count">6件 / 5.4%</span>
           </li>
           
           <li>
             <span class="theme-name">ブリ・寒ブリ</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:24%; background:#5fa8a8;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:24%; background:#7dd1cf;"></span></span>
             <span class="theme-count">5件 / 4.5%</span>
           </li>
           
           <li>
             <span class="theme-name">ます寿司</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:24%; background:#5fa8a8;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:24%; background:#7dd1cf;"></span></span>
             <span class="theme-count">5件 / 4.5%</span>
           </li>
           
         </ul>
       </div>
       <div>
-        <div class="quotes" style="border-left-color:#5fa8a8;">
-          <div class="quotes-title" style="color:#5fa8a8;">声の抜粋</div>
+        <div class="quotes" style="border-left-color:#7dd1cf;">
+          <div class="quotes-title" style="color:#7dd1cf;">声の抜粋</div>
           <ul>
             
             <li>ホタルイカミュージアムのホタルイカしゃぶしゃぶ</li>
@@ -1565,46 +1570,46 @@
       <div class="age-row-label">
         <div class="age-row-title">30代</div>
         <div class="age-row-n">n = 185</div>
-        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:32%; background:#2d7a7a;"></div></div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:32%; background:#41b4b1;"></div></div>
       </div>
       <div>
         <ul class="theme-list">
           
           <li>
             <span class="theme-name">寿司・刺身</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#2d7a7a;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#41b4b1;"></span></span>
             <span class="theme-count">33件 / 17.8%</span>
           </li>
           
           <li>
             <span class="theme-name">白えび</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:76%; background:#2d7a7a;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:76%; background:#41b4b1;"></span></span>
             <span class="theme-count">25件 / 13.5%</span>
           </li>
           
           <li>
             <span class="theme-name">ホタルイカ</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:64%; background:#2d7a7a;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:64%; background:#41b4b1;"></span></span>
             <span class="theme-count">21件 / 11.4%</span>
           </li>
           
           <li>
             <span class="theme-name">ブリ・寒ブリ</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:21%; background:#2d7a7a;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:21%; background:#41b4b1;"></span></span>
             <span class="theme-count">7件 / 3.8%</span>
           </li>
           
           <li>
             <span class="theme-name">富山ブラック・ラーメン</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:9%; background:#2d7a7a;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:9%; background:#41b4b1;"></span></span>
             <span class="theme-count">3件 / 1.6%</span>
           </li>
           
         </ul>
       </div>
       <div>
-        <div class="quotes" style="border-left-color:#2d7a7a;">
-          <div class="quotes-title" style="color:#2d7a7a;">声の抜粋</div>
+        <div class="quotes" style="border-left-color:#41b4b1;">
+          <div class="quotes-title" style="color:#41b4b1;">声の抜粋</div>
           <ul>
             
             <li>寿司食いねえで飲んだあら汁の魚がめちゃくちゃ大きかったこと</li>
@@ -1627,46 +1632,46 @@
       <div class="age-row-label">
         <div class="age-row-title">40代</div>
         <div class="age-row-n">n = 299</div>
-        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:52%; background:#1a5454;"></div></div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:52%; background:#237371;"></div></div>
       </div>
       <div>
         <ul class="theme-list">
           
           <li>
             <span class="theme-name">寿司・刺身</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#1a5454;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#237371;"></span></span>
             <span class="theme-count">60件 / 20.1%</span>
           </li>
           
           <li>
             <span class="theme-name">ホタルイカ</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:80%; background:#1a5454;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:80%; background:#237371;"></span></span>
             <span class="theme-count">48件 / 16.1%</span>
           </li>
           
           <li>
             <span class="theme-name">白えび</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:40%; background:#1a5454;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:40%; background:#237371;"></span></span>
             <span class="theme-count">24件 / 8.0%</span>
           </li>
           
           <li>
             <span class="theme-name">ブリ・寒ブリ</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:30%; background:#1a5454;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:30%; background:#237371;"></span></span>
             <span class="theme-count">18件 / 6.0%</span>
           </li>
           
           <li>
             <span class="theme-name">ます寿司</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:11%; background:#1a5454;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:11%; background:#237371;"></span></span>
             <span class="theme-count">7件 / 2.3%</span>
           </li>
           
         </ul>
       </div>
       <div>
-        <div class="quotes" style="border-left-color:#1a5454;">
-          <div class="quotes-title" style="color:#1a5454;">声の抜粋</div>
+        <div class="quotes" style="border-left-color:#237371;">
+          <div class="quotes-title" style="color:#237371;">声の抜粋</div>
           <ul>
             
             <li>ホタルイカのしゃぶしゃぶ、サーモンレアかつ</li>
@@ -1689,46 +1694,46 @@
       <div class="age-row-label">
         <div class="age-row-title">50代</div>
         <div class="age-row-n">n = 575</div>
-        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:100%; background:#3a7194;"></div></div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:100%; background:#4d5dbf;"></div></div>
       </div>
       <div>
         <ul class="theme-list">
           
           <li>
             <span class="theme-name">寿司・刺身</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#3a7194;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#4d5dbf;"></span></span>
             <span class="theme-count">130件 / 22.6%</span>
           </li>
           
           <li>
             <span class="theme-name">ホタルイカ</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:60%; background:#3a7194;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:60%; background:#4d5dbf;"></span></span>
             <span class="theme-count">78件 / 13.6%</span>
           </li>
           
           <li>
             <span class="theme-name">白えび</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:54%; background:#3a7194;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:54%; background:#4d5dbf;"></span></span>
             <span class="theme-count">70件 / 12.2%</span>
           </li>
           
           <li>
             <span class="theme-name">ブリ・寒ブリ</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:15%; background:#3a7194;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:15%; background:#4d5dbf;"></span></span>
             <span class="theme-count">19件 / 3.3%</span>
           </li>
           
           <li>
             <span class="theme-name">ベニズワイ・カニ</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:15%; background:#3a7194;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:15%; background:#4d5dbf;"></span></span>
             <span class="theme-count">19件 / 3.3%</span>
           </li>
           
         </ul>
       </div>
       <div>
-        <div class="quotes" style="border-left-color:#3a7194;">
-          <div class="quotes-title" style="color:#3a7194;">声の抜粋</div>
+        <div class="quotes" style="border-left-color:#4d5dbf;">
+          <div class="quotes-title" style="color:#4d5dbf;">声の抜粋</div>
           <ul>
             
             <li>糸庄さんのホルモンうどん。ホントに美味しかった〜。</li>
@@ -1751,46 +1756,46 @@
       <div class="age-row-label">
         <div class="age-row-title">60代</div>
         <div class="age-row-n">n = 540</div>
-        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:94%; background:#1d4e6f;"></div></div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:94%; background:#253394;"></div></div>
       </div>
       <div>
         <ul class="theme-list">
           
           <li>
             <span class="theme-name">寿司・刺身</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#1d4e6f;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#253394;"></span></span>
             <span class="theme-count">131件 / 24.3%</span>
           </li>
           
           <li>
             <span class="theme-name">白えび</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:49%; background:#1d4e6f;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:49%; background:#253394;"></span></span>
             <span class="theme-count">64件 / 11.9%</span>
           </li>
           
           <li>
             <span class="theme-name">ホタルイカ</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:46%; background:#1d4e6f;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:46%; background:#253394;"></span></span>
             <span class="theme-count">60件 / 11.1%</span>
           </li>
           
           <li>
             <span class="theme-name">ます寿司</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:9%; background:#1d4e6f;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:9%; background:#253394;"></span></span>
             <span class="theme-count">12件 / 2.2%</span>
           </li>
           
           <li>
             <span class="theme-name">ブリ・寒ブリ</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:8%; background:#1d4e6f;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:8%; background:#253394;"></span></span>
             <span class="theme-count">10件 / 1.9%</span>
           </li>
           
         </ul>
       </div>
       <div>
-        <div class="quotes" style="border-left-color:#1d4e6f;">
-          <div class="quotes-title" style="color:#1d4e6f;">声の抜粋</div>
+        <div class="quotes" style="border-left-color:#253394;">
+          <div class="quotes-title" style="color:#253394;">声の抜粋</div>
           <ul>
             
             <li>ブラックラーメン。それと氷見煮干しラーメン</li>
@@ -1813,46 +1818,46 @@
       <div class="age-row-label">
         <div class="age-row-title">70代以上</div>
         <div class="age-row-n">n = 215</div>
-        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:37%; background:#0e3550;"></div></div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:37%; background:#161e5c;"></div></div>
       </div>
       <div>
         <ul class="theme-list">
           
           <li>
             <span class="theme-name">寿司・刺身</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#0e3550;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#161e5c;"></span></span>
             <span class="theme-count">58件 / 27.0%</span>
           </li>
           
           <li>
             <span class="theme-name">白えび</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:43%; background:#0e3550;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:43%; background:#161e5c;"></span></span>
             <span class="theme-count">25件 / 11.6%</span>
           </li>
           
           <li>
             <span class="theme-name">ホタルイカ</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:33%; background:#0e3550;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:33%; background:#161e5c;"></span></span>
             <span class="theme-count">19件 / 8.8%</span>
           </li>
           
           <li>
             <span class="theme-name">ブリ・寒ブリ</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:7%; background:#0e3550;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:7%; background:#161e5c;"></span></span>
             <span class="theme-count">4件 / 1.9%</span>
           </li>
           
           <li>
             <span class="theme-name">富山ブラック・ラーメン</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:5%; background:#0e3550;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:5%; background:#161e5c;"></span></span>
             <span class="theme-count">3件 / 1.4%</span>
           </li>
           
         </ul>
       </div>
       <div>
-        <div class="quotes" style="border-left-color:#0e3550;">
-          <div class="quotes-title" style="color:#0e3550;">声の抜粋</div>
+        <div class="quotes" style="border-left-color:#161e5c;">
+          <div class="quotes-title" style="color:#161e5c;">声の抜粋</div>
           <ul>
             
             <li>何といっても、ホタルイカです。酢味噌や沖漬はたまらないと思います。</li>
@@ -1902,46 +1907,46 @@
       <div class="age-row-label">
         <div class="age-row-title">20代</div>
         <div class="age-row-n">n = 111</div>
-        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:19%; background:#5fa8a8;"></div></div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:19%; background:#7dd1cf;"></div></div>
       </div>
       <div>
         <ul class="theme-list">
           
           <li>
             <span class="theme-name">公共交通の本数・接続</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#5fa8a8;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#7dd1cf;"></span></span>
             <span class="theme-count">9件 / 8.1%</span>
           </li>
           
           <li>
             <span class="theme-name">駐車場</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:33%; background:#5fa8a8;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:33%; background:#7dd1cf;"></span></span>
             <span class="theme-count">3件 / 2.7%</span>
           </li>
           
           <li>
             <span class="theme-name">飲食店の確保・予約</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:33%; background:#5fa8a8;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:33%; background:#7dd1cf;"></span></span>
             <span class="theme-count">3件 / 2.7%</span>
           </li>
           
           <li>
             <span class="theme-name">気候・服装</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:22%; background:#5fa8a8;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:22%; background:#7dd1cf;"></span></span>
             <span class="theme-count">2件 / 1.8%</span>
           </li>
           
           <li>
             <span class="theme-name">キャッシュレス・ICカード</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:22%; background:#5fa8a8;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:22%; background:#7dd1cf;"></span></span>
             <span class="theme-count">2件 / 1.8%</span>
           </li>
           
         </ul>
       </div>
       <div>
-        <div class="quotes" style="border-left-color:#5fa8a8;">
-          <div class="quotes-title" style="color:#5fa8a8;">声の抜粋</div>
+        <div class="quotes" style="border-left-color:#7dd1cf;">
+          <div class="quotes-title" style="color:#7dd1cf;">声の抜粋</div>
           <ul>
             
             <li>立山黒部アルペンルートでは事前に時刻表を参照して行ったが、現地では時刻表に無い臨時便が出ていた。臨時便に乗ることで効率よく移動できたが、臨時便の有無は現地の各駅に行くまで分からないのだろうか？</li>
@@ -1964,46 +1969,46 @@
       <div class="age-row-label">
         <div class="age-row-title">30代</div>
         <div class="age-row-n">n = 185</div>
-        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:32%; background:#2d7a7a;"></div></div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:32%; background:#41b4b1;"></div></div>
       </div>
       <div>
         <ul class="theme-list">
           
           <li>
             <span class="theme-name">公共交通の本数・接続</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#2d7a7a;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#41b4b1;"></span></span>
             <span class="theme-count">13件 / 7.0%</span>
           </li>
           
           <li>
             <span class="theme-name">混雑・渋滞</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:61%; background:#2d7a7a;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:61%; background:#41b4b1;"></span></span>
             <span class="theme-count">8件 / 4.3%</span>
           </li>
           
           <li>
             <span class="theme-name">駐車場</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:61%; background:#2d7a7a;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:61%; background:#41b4b1;"></span></span>
             <span class="theme-count">8件 / 4.3%</span>
           </li>
           
           <li>
             <span class="theme-name">マイカー以外での移動困難</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:54%; background:#2d7a7a;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:54%; background:#41b4b1;"></span></span>
             <span class="theme-count">7件 / 3.8%</span>
           </li>
           
           <li>
             <span class="theme-name">飲食店の確保・予約</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:54%; background:#2d7a7a;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:54%; background:#41b4b1;"></span></span>
             <span class="theme-count">7件 / 3.8%</span>
           </li>
           
         </ul>
       </div>
       <div>
-        <div class="quotes" style="border-left-color:#2d7a7a;">
-          <div class="quotes-title" style="color:#2d7a7a;">声の抜粋</div>
+        <div class="quotes" style="border-left-color:#41b4b1;">
+          <div class="quotes-title" style="color:#41b4b1;">声の抜粋</div>
           <ul>
             
             <li>雨晴の道の駅の駐車場が少なくて混んでいた</li>
@@ -2026,46 +2031,46 @@
       <div class="age-row-label">
         <div class="age-row-title">40代</div>
         <div class="age-row-n">n = 299</div>
-        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:52%; background:#1a5454;"></div></div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:52%; background:#237371;"></div></div>
       </div>
       <div>
         <ul class="theme-list">
           
           <li>
             <span class="theme-name">公共交通の本数・接続</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#1a5454;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#237371;"></span></span>
             <span class="theme-count">18件 / 6.0%</span>
           </li>
           
           <li>
             <span class="theme-name">混雑・渋滞</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:78%; background:#1a5454;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:78%; background:#237371;"></span></span>
             <span class="theme-count">14件 / 4.7%</span>
           </li>
           
           <li>
             <span class="theme-name">飲食店の確保・予約</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:67%; background:#1a5454;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:67%; background:#237371;"></span></span>
             <span class="theme-count">12件 / 4.0%</span>
           </li>
           
           <li>
             <span class="theme-name">気候・服装</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:62%; background:#1a5454;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:62%; background:#237371;"></span></span>
             <span class="theme-count">11件 / 3.7%</span>
           </li>
           
           <li>
             <span class="theme-name">駐車場</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:62%; background:#1a5454;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:62%; background:#237371;"></span></span>
             <span class="theme-count">11件 / 3.7%</span>
           </li>
           
         </ul>
       </div>
       <div>
-        <div class="quotes" style="border-left-color:#1a5454;">
-          <div class="quotes-title" style="color:#1a5454;">声の抜粋</div>
+        <div class="quotes" style="border-left-color:#237371;">
+          <div class="quotes-title" style="color:#237371;">声の抜粋</div>
           <ul>
             
             <li>華山温泉に露天風呂がなかったのが残念でした</li>
@@ -2088,46 +2093,46 @@
       <div class="age-row-label">
         <div class="age-row-title">50代</div>
         <div class="age-row-n">n = 575</div>
-        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:100%; background:#3a7194;"></div></div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:100%; background:#4d5dbf;"></div></div>
       </div>
       <div>
         <ul class="theme-list">
           
           <li>
             <span class="theme-name">公共交通の本数・接続</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#3a7194;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#4d5dbf;"></span></span>
             <span class="theme-count">32件 / 5.6%</span>
           </li>
           
           <li>
             <span class="theme-name">飲食店の確保・予約</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:71%; background:#3a7194;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:71%; background:#4d5dbf;"></span></span>
             <span class="theme-count">23件 / 4.0%</span>
           </li>
           
           <li>
             <span class="theme-name">混雑・渋滞</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:66%; background:#3a7194;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:66%; background:#4d5dbf;"></span></span>
             <span class="theme-count">21件 / 3.7%</span>
           </li>
           
           <li>
             <span class="theme-name">駐車場</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:62%; background:#3a7194;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:62%; background:#4d5dbf;"></span></span>
             <span class="theme-count">20件 / 3.5%</span>
           </li>
           
           <li>
             <span class="theme-name">宿泊施設</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:55%; background:#3a7194;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:55%; background:#4d5dbf;"></span></span>
             <span class="theme-count">18件 / 3.1%</span>
           </li>
           
         </ul>
       </div>
       <div>
-        <div class="quotes" style="border-left-color:#3a7194;">
-          <div class="quotes-title" style="color:#3a7194;">声の抜粋</div>
+        <div class="quotes" style="border-left-color:#4d5dbf;">
+          <div class="quotes-title" style="color:#4d5dbf;">声の抜粋</div>
           <ul>
             
             <li>春もどっちも好きだけど、ドカ雪の時は最高でした</li>
@@ -2150,46 +2155,46 @@
       <div class="age-row-label">
         <div class="age-row-title">60代</div>
         <div class="age-row-n">n = 540</div>
-        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:94%; background:#1d4e6f;"></div></div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:94%; background:#253394;"></div></div>
       </div>
       <div>
         <ul class="theme-list">
           
           <li>
             <span class="theme-name">気候・服装</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#1d4e6f;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#253394;"></span></span>
             <span class="theme-count">24件 / 4.4%</span>
           </li>
           
           <li>
             <span class="theme-name">公共交通の本数・接続</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:93%; background:#1d4e6f;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:93%; background:#253394;"></span></span>
             <span class="theme-count">22件 / 4.1%</span>
           </li>
           
           <li>
             <span class="theme-name">混雑・渋滞</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:75%; background:#1d4e6f;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:75%; background:#253394;"></span></span>
             <span class="theme-count">18件 / 3.3%</span>
           </li>
           
           <li>
             <span class="theme-name">駐車場</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:75%; background:#1d4e6f;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:75%; background:#253394;"></span></span>
             <span class="theme-count">18件 / 3.3%</span>
           </li>
           
           <li>
             <span class="theme-name">飲食店の確保・予約</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:55%; background:#1d4e6f;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:55%; background:#253394;"></span></span>
             <span class="theme-count">13件 / 2.4%</span>
           </li>
           
         </ul>
       </div>
       <div>
-        <div class="quotes" style="border-left-color:#1d4e6f;">
-          <div class="quotes-title" style="color:#1d4e6f;">声の抜粋</div>
+        <div class="quotes" style="border-left-color:#253394;">
+          <div class="quotes-title" style="color:#253394;">声の抜粋</div>
           <ul>
             
             <li>室堂ターミナルのベンチが撤去されており、登山靴を履いたり、パッキングする等準備する場所に不自由した。 室堂ターミナルに人集りが出来ていて、通行の妨げになった。</li>
@@ -2212,46 +2217,46 @@
       <div class="age-row-label">
         <div class="age-row-title">70代以上</div>
         <div class="age-row-n">n = 215</div>
-        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:37%; background:#0e3550;"></div></div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:37%; background:#161e5c;"></div></div>
       </div>
       <div>
         <ul class="theme-list">
           
           <li>
             <span class="theme-name">公共交通の本数・接続</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#0e3550;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#161e5c;"></span></span>
             <span class="theme-count">12件 / 5.6%</span>
           </li>
           
           <li>
             <span class="theme-name">マイカー以外での移動困難</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:59%; background:#0e3550;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:59%; background:#161e5c;"></span></span>
             <span class="theme-count">7件 / 3.3%</span>
           </li>
           
           <li>
             <span class="theme-name">宿泊施設</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:41%; background:#0e3550;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:41%; background:#161e5c;"></span></span>
             <span class="theme-count">5件 / 2.3%</span>
           </li>
           
           <li>
             <span class="theme-name">混雑・渋滞</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:25%; background:#0e3550;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:25%; background:#161e5c;"></span></span>
             <span class="theme-count">3件 / 1.4%</span>
           </li>
           
           <li>
             <span class="theme-name">飲食店の確保・予約</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:25%; background:#0e3550;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:25%; background:#161e5c;"></span></span>
             <span class="theme-count">3件 / 1.4%</span>
           </li>
           
         </ul>
       </div>
       <div>
-        <div class="quotes" style="border-left-color:#0e3550;">
-          <div class="quotes-title" style="color:#0e3550;">声の抜粋</div>
+        <div class="quotes" style="border-left-color:#161e5c;">
+          <div class="quotes-title" style="color:#161e5c;">声の抜粋</div>
           <ul>
             
             <li>交通の便　電車数が少なく移動な時間がかかる。</li>
@@ -2308,46 +2313,46 @@
       <div class="age-row-label">
         <div class="age-row-title">夫婦</div>
         <div class="age-row-n">n = 760</div>
-        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:100%; background:#0e3550;"></div></div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:100%; background:#161e5c;"></div></div>
       </div>
       <div>
         <ul class="theme-list">
           
           <li>
             <span class="theme-name">雪の大谷・立山黒部</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#0e3550;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#161e5c;"></span></span>
             <span class="theme-count">72件 / 9.5%</span>
           </li>
           
           <li>
             <span class="theme-name">雨晴海岸</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:67%; background:#0e3550;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:67%; background:#161e5c;"></span></span>
             <span class="theme-count">49件 / 6.4%</span>
           </li>
           
           <li>
             <span class="theme-name">チューリップフェア・砺波</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:54%; background:#0e3550;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:54%; background:#161e5c;"></span></span>
             <span class="theme-count">39件 / 5.1%</span>
           </li>
           
           <li>
             <span class="theme-name">温泉</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:53%; background:#0e3550;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:53%; background:#161e5c;"></span></span>
             <span class="theme-count">38件 / 5.0%</span>
           </li>
           
           <li>
             <span class="theme-name">立山連峰の眺望</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:41%; background:#0e3550;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:41%; background:#161e5c;"></span></span>
             <span class="theme-count">30件 / 3.9%</span>
           </li>
           
         </ul>
       </div>
       <div>
-        <div class="quotes" style="border-left-color:#0e3550;">
-          <div class="quotes-title" style="color:#0e3550;">声の抜粋</div>
+        <div class="quotes" style="border-left-color:#161e5c;">
+          <div class="quotes-title" style="color:#161e5c;">声の抜粋</div>
           <ul>
             
             <li>帰省が主目的で、ガラス美術館にはずっと行ってみたくやっと行けました。</li>
@@ -2370,46 +2375,46 @@
       <div class="age-row-label">
         <div class="age-row-title">ひとり</div>
         <div class="age-row-n">n = 234</div>
-        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:31%; background:#1d4e6f;"></div></div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:31%; background:#253394;"></div></div>
       </div>
       <div>
         <ul class="theme-list">
           
           <li>
             <span class="theme-name">雪の大谷・立山黒部</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#1d4e6f;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#253394;"></span></span>
             <span class="theme-count">16件 / 6.8%</span>
           </li>
           
           <li>
             <span class="theme-name">黒部峡谷・宇奈月</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:69%; background:#1d4e6f;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:69%; background:#253394;"></span></span>
             <span class="theme-count">11件 / 4.7%</span>
           </li>
           
           <li>
             <span class="theme-name">雨晴海岸</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:63%; background:#1d4e6f;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:63%; background:#253394;"></span></span>
             <span class="theme-count">10件 / 4.3%</span>
           </li>
           
           <li>
             <span class="theme-name">氷見</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:50%; background:#1d4e6f;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:50%; background:#253394;"></span></span>
             <span class="theme-count">8件 / 3.4%</span>
           </li>
           
           <li>
             <span class="theme-name">立山連峰の眺望</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:44%; background:#1d4e6f;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:44%; background:#253394;"></span></span>
             <span class="theme-count">7件 / 3.0%</span>
           </li>
           
         </ul>
       </div>
       <div>
-        <div class="quotes" style="border-left-color:#1d4e6f;">
-          <div class="quotes-title" style="color:#1d4e6f;">声の抜粋</div>
+        <div class="quotes" style="border-left-color:#253394;">
+          <div class="quotes-title" style="color:#253394;">声の抜粋</div>
           <ul>
             
             <li>氷見線に乗って雨晴海岸へ行った事と昨年来行きたかった岩瀬の街並みを歩いたこと。</li>
@@ -2432,46 +2437,46 @@
       <div class="age-row-label">
         <div class="age-row-title">大人の家族</div>
         <div class="age-row-n">n = 380</div>
-        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:50%; background:#3a7194;"></div></div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:50%; background:#4d5dbf;"></div></div>
       </div>
       <div>
         <ul class="theme-list">
           
           <li>
             <span class="theme-name">雪の大谷・立山黒部</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#3a7194;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#4d5dbf;"></span></span>
             <span class="theme-count">38件 / 10.0%</span>
           </li>
           
           <li>
             <span class="theme-name">雨晴海岸</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:66%; background:#3a7194;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:66%; background:#4d5dbf;"></span></span>
             <span class="theme-count">25件 / 6.6%</span>
           </li>
           
           <li>
             <span class="theme-name">チューリップフェア・砺波</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:61%; background:#3a7194;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:61%; background:#4d5dbf;"></span></span>
             <span class="theme-count">23件 / 6.1%</span>
           </li>
           
           <li>
             <span class="theme-name">温泉</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:61%; background:#3a7194;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:61%; background:#4d5dbf;"></span></span>
             <span class="theme-count">23件 / 6.1%</span>
           </li>
           
           <li>
             <span class="theme-name">黒部峡谷・宇奈月</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:42%; background:#3a7194;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:42%; background:#4d5dbf;"></span></span>
             <span class="theme-count">16件 / 4.2%</span>
           </li>
           
         </ul>
       </div>
       <div>
-        <div class="quotes" style="border-left-color:#3a7194;">
-          <div class="quotes-title" style="color:#3a7194;">声の抜粋</div>
+        <div class="quotes" style="border-left-color:#4d5dbf;">
+          <div class="quotes-title" style="color:#4d5dbf;">声の抜粋</div>
           <ul>
             
             <li>雨晴海岸からもう少し北？に行ったところから見た2つの島と海の景色、テトラポットと松があるところです。眺めが良ければ立山連峰が見えるところで、平和交通さんに連れて行っていただき見させていただきました。</li>
@@ -2494,46 +2499,46 @@
       <div class="age-row-label">
         <div class="age-row-title">友人・知人</div>
         <div class="age-row-n">n = 178</div>
-        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:23%; background:#1a5454;"></div></div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:23%; background:#237371;"></div></div>
       </div>
       <div>
         <ul class="theme-list">
           
           <li>
             <span class="theme-name">雪の大谷・立山黒部</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#1a5454;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#237371;"></span></span>
             <span class="theme-count">23件 / 12.9%</span>
           </li>
           
           <li>
             <span class="theme-name">雨晴海岸</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:52%; background:#1a5454;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:52%; background:#237371;"></span></span>
             <span class="theme-count">12件 / 6.7%</span>
           </li>
           
           <li>
             <span class="theme-name">立山連峰の眺望</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:48%; background:#1a5454;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:48%; background:#237371;"></span></span>
             <span class="theme-count">11件 / 6.2%</span>
           </li>
           
           <li>
             <span class="theme-name">チューリップフェア・砺波</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:40%; background:#1a5454;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:40%; background:#237371;"></span></span>
             <span class="theme-count">9件 / 5.1%</span>
           </li>
           
           <li>
             <span class="theme-name">温泉</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:35%; background:#1a5454;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:35%; background:#237371;"></span></span>
             <span class="theme-count">8件 / 4.5%</span>
           </li>
           
         </ul>
       </div>
       <div>
-        <div class="quotes" style="border-left-color:#1a5454;">
-          <div class="quotes-title" style="color:#1a5454;">声の抜粋</div>
+        <div class="quotes" style="border-left-color:#237371;">
+          <div class="quotes-title" style="color:#237371;">声の抜粋</div>
           <ul>
             
             <li>雨晴海岸から薄っすらと立山連峰が見えた。雪の残っている北アルプスを間近に見た事、室堂付近を散策し、雷鳥を間近で見ることが出来た。</li>
@@ -2556,46 +2561,46 @@
       <div class="age-row-label">
         <div class="age-row-title">子連れ(未就学児)</div>
         <div class="age-row-n">n = 89</div>
-        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:12%; background:#2d7a7a;"></div></div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:12%; background:#41b4b1;"></div></div>
       </div>
       <div>
         <ul class="theme-list">
           
           <li>
             <span class="theme-name">チューリップフェア・砺波</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#2d7a7a;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#41b4b1;"></span></span>
             <span class="theme-count">8件 / 9.0%</span>
           </li>
           
           <li>
             <span class="theme-name">温泉</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:62%; background:#2d7a7a;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:62%; background:#41b4b1;"></span></span>
             <span class="theme-count">5件 / 5.6%</span>
           </li>
           
           <li>
             <span class="theme-name">黒部峡谷・宇奈月</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:62%; background:#2d7a7a;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:62%; background:#41b4b1;"></span></span>
             <span class="theme-count">5件 / 5.6%</span>
           </li>
           
           <li>
             <span class="theme-name">氷見</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:24%; background:#2d7a7a;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:24%; background:#41b4b1;"></span></span>
             <span class="theme-count">2件 / 2.2%</span>
           </li>
           
           <li>
             <span class="theme-name">ヒスイ海岸</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:24%; background:#2d7a7a;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:24%; background:#41b4b1;"></span></span>
             <span class="theme-count">2件 / 2.2%</span>
           </li>
           
         </ul>
       </div>
       <div>
-        <div class="quotes" style="border-left-color:#2d7a7a;">
-          <div class="quotes-title" style="color:#2d7a7a;">声の抜粋</div>
+        <div class="quotes" style="border-left-color:#41b4b1;">
+          <div class="quotes-title" style="color:#41b4b1;">声の抜粋</div>
           <ul>
             
             <li>ファミリーパークは広く、いろんな世代が楽しめると思った。</li>
@@ -2618,46 +2623,46 @@
       <div class="age-row-label">
         <div class="age-row-title">子連れ(小〜高生)</div>
         <div class="age-row-n">n = 146</div>
-        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:19%; background:#5fa8a8;"></div></div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:19%; background:#7dd1cf;"></div></div>
       </div>
       <div>
         <ul class="theme-list">
           
           <li>
             <span class="theme-name">雪の大谷・立山黒部</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#5fa8a8;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#7dd1cf;"></span></span>
             <span class="theme-count">16件 / 11.0%</span>
           </li>
           
           <li>
             <span class="theme-name">ホタルイカ関連体験</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:62%; background:#5fa8a8;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:62%; background:#7dd1cf;"></span></span>
             <span class="theme-count">10件 / 6.8%</span>
           </li>
           
           <li>
             <span class="theme-name">チューリップフェア・砺波</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:44%; background:#5fa8a8;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:44%; background:#7dd1cf;"></span></span>
             <span class="theme-count">7件 / 4.8%</span>
           </li>
           
           <li>
             <span class="theme-name">ガラス美術館</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:44%; background:#5fa8a8;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:44%; background:#7dd1cf;"></span></span>
             <span class="theme-count">7件 / 4.8%</span>
           </li>
           
           <li>
             <span class="theme-name">ヒスイ海岸</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:37%; background:#5fa8a8;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:37%; background:#7dd1cf;"></span></span>
             <span class="theme-count">6件 / 4.1%</span>
           </li>
           
         </ul>
       </div>
       <div>
-        <div class="quotes" style="border-left-color:#5fa8a8;">
-          <div class="quotes-title" style="color:#5fa8a8;">声の抜粋</div>
+        <div class="quotes" style="border-left-color:#7dd1cf;">
+          <div class="quotes-title" style="color:#7dd1cf;">声の抜粋</div>
           <ul>
             
             <li>ホタルイカミュージアムでホタルイカに触れたり、食べたりできたこと。</li>
@@ -2764,46 +2769,46 @@
       <div class="age-row-label">
         <div class="age-row-title">夫婦</div>
         <div class="age-row-n">n = 760</div>
-        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:100%; background:#0e3550;"></div></div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:100%; background:#161e5c;"></div></div>
       </div>
       <div>
         <ul class="theme-list">
           
           <li>
             <span class="theme-name">寿司・刺身</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#0e3550;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#161e5c;"></span></span>
             <span class="theme-count">178件 / 23.4%</span>
           </li>
           
           <li>
             <span class="theme-name">ホタルイカ</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:55%; background:#0e3550;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:55%; background:#161e5c;"></span></span>
             <span class="theme-count">97件 / 12.8%</span>
           </li>
           
           <li>
             <span class="theme-name">白えび</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:45%; background:#0e3550;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:45%; background:#161e5c;"></span></span>
             <span class="theme-count">80件 / 10.5%</span>
           </li>
           
           <li>
             <span class="theme-name">ブリ・寒ブリ</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:10%; background:#0e3550;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:10%; background:#161e5c;"></span></span>
             <span class="theme-count">18件 / 2.4%</span>
           </li>
           
           <li>
             <span class="theme-name">ます寿司</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:9%; background:#0e3550;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:9%; background:#161e5c;"></span></span>
             <span class="theme-count">17件 / 2.2%</span>
           </li>
           
         </ul>
       </div>
       <div>
-        <div class="quotes" style="border-left-color:#0e3550;">
-          <div class="quotes-title" style="color:#0e3550;">声の抜粋</div>
+        <div class="quotes" style="border-left-color:#161e5c;">
+          <div class="quotes-title" style="color:#161e5c;">声の抜粋</div>
           <ul>
             
             <li>刺身盛り（ヒラメ、サバ、フクラギ、サス）</li>
@@ -2826,46 +2831,46 @@
       <div class="age-row-label">
         <div class="age-row-title">ひとり</div>
         <div class="age-row-n">n = 234</div>
-        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:31%; background:#1d4e6f;"></div></div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:31%; background:#253394;"></div></div>
       </div>
       <div>
         <ul class="theme-list">
           
           <li>
             <span class="theme-name">寿司・刺身</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#1d4e6f;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#253394;"></span></span>
             <span class="theme-count">60件 / 25.6%</span>
           </li>
           
           <li>
             <span class="theme-name">ホタルイカ</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:40%; background:#1d4e6f;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:40%; background:#253394;"></span></span>
             <span class="theme-count">24件 / 10.3%</span>
           </li>
           
           <li>
             <span class="theme-name">白えび</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:33%; background:#1d4e6f;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:33%; background:#253394;"></span></span>
             <span class="theme-count">20件 / 8.5%</span>
           </li>
           
           <li>
             <span class="theme-name">富山ブラック・ラーメン</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:13%; background:#1d4e6f;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:13%; background:#253394;"></span></span>
             <span class="theme-count">8件 / 3.4%</span>
           </li>
           
           <li>
             <span class="theme-name">ブリ・寒ブリ</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:10%; background:#1d4e6f;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:10%; background:#253394;"></span></span>
             <span class="theme-count">6件 / 2.6%</span>
           </li>
           
         </ul>
       </div>
       <div>
-        <div class="quotes" style="border-left-color:#1d4e6f;">
-          <div class="quotes-title" style="color:#1d4e6f;">声の抜粋</div>
+        <div class="quotes" style="border-left-color:#253394;">
+          <div class="quotes-title" style="color:#253394;">声の抜粋</div>
           <ul>
             
             <li>ホタルイカミュージアムのホタルイカしゃぶしゃぶ</li>
@@ -2888,46 +2893,46 @@
       <div class="age-row-label">
         <div class="age-row-title">大人の家族</div>
         <div class="age-row-n">n = 380</div>
-        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:50%; background:#3a7194;"></div></div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:50%; background:#4d5dbf;"></div></div>
       </div>
       <div>
         <ul class="theme-list">
           
           <li>
             <span class="theme-name">寿司・刺身</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#3a7194;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#4d5dbf;"></span></span>
             <span class="theme-count">81件 / 21.3%</span>
           </li>
           
           <li>
             <span class="theme-name">白えび</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:65%; background:#3a7194;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:65%; background:#4d5dbf;"></span></span>
             <span class="theme-count">53件 / 13.9%</span>
           </li>
           
           <li>
             <span class="theme-name">ホタルイカ</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:61%; background:#3a7194;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:61%; background:#4d5dbf;"></span></span>
             <span class="theme-count">49件 / 12.9%</span>
           </li>
           
           <li>
             <span class="theme-name">ブリ・寒ブリ</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:21%; background:#3a7194;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:21%; background:#4d5dbf;"></span></span>
             <span class="theme-count">17件 / 4.5%</span>
           </li>
           
           <li>
             <span class="theme-name">ます寿司</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:12%; background:#3a7194;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:12%; background:#4d5dbf;"></span></span>
             <span class="theme-count">10件 / 2.6%</span>
           </li>
           
         </ul>
       </div>
       <div>
-        <div class="quotes" style="border-left-color:#3a7194;">
-          <div class="quotes-title" style="color:#3a7194;">声の抜粋</div>
+        <div class="quotes" style="border-left-color:#4d5dbf;">
+          <div class="quotes-title" style="color:#4d5dbf;">声の抜粋</div>
           <ul>
             
             <li>白海老の唐揚げはもちろん、シオノコのなめろう、氷見牛のすき焼き、どれも美味しいです。1日目夜のあさりごはんも美味しかったです。氷見産コシヒカリ、美味しいです。</li>
@@ -2950,46 +2955,46 @@
       <div class="age-row-label">
         <div class="age-row-title">友人・知人</div>
         <div class="age-row-n">n = 178</div>
-        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:23%; background:#1a5454;"></div></div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:23%; background:#237371;"></div></div>
       </div>
       <div>
         <ul class="theme-list">
           
           <li>
             <span class="theme-name">寿司・刺身</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#1a5454;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#237371;"></span></span>
             <span class="theme-count">39件 / 21.9%</span>
           </li>
           
           <li>
             <span class="theme-name">ホタルイカ</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:67%; background:#1a5454;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:67%; background:#237371;"></span></span>
             <span class="theme-count">26件 / 14.6%</span>
           </li>
           
           <li>
             <span class="theme-name">白えび</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:67%; background:#1a5454;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:67%; background:#237371;"></span></span>
             <span class="theme-count">26件 / 14.6%</span>
           </li>
           
           <li>
             <span class="theme-name">ベニズワイ・カニ</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:8%; background:#1a5454;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:8%; background:#237371;"></span></span>
             <span class="theme-count">3件 / 1.7%</span>
           </li>
           
           <li>
             <span class="theme-name">ブリ・寒ブリ</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:8%; background:#1a5454;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:8%; background:#237371;"></span></span>
             <span class="theme-count">3件 / 1.7%</span>
           </li>
           
         </ul>
       </div>
       <div>
-        <div class="quotes" style="border-left-color:#1a5454;">
-          <div class="quotes-title" style="color:#1a5454;">声の抜粋</div>
+        <div class="quotes" style="border-left-color:#237371;">
+          <div class="quotes-title" style="color:#237371;">声の抜粋</div>
           <ul>
             
             <li>寿司食いねえで飲んだあら汁の魚がめちゃくちゃ大きかったこと</li>
@@ -3012,46 +3017,46 @@
       <div class="age-row-label">
         <div class="age-row-title">子連れ(未就学児)</div>
         <div class="age-row-n">n = 89</div>
-        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:12%; background:#2d7a7a;"></div></div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:12%; background:#41b4b1;"></div></div>
       </div>
       <div>
         <ul class="theme-list">
           
           <li>
             <span class="theme-name">寿司・刺身</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#2d7a7a;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#41b4b1;"></span></span>
             <span class="theme-count">18件 / 20.2%</span>
           </li>
           
           <li>
             <span class="theme-name">白えび</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:55%; background:#2d7a7a;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:55%; background:#41b4b1;"></span></span>
             <span class="theme-count">10件 / 11.2%</span>
           </li>
           
           <li>
             <span class="theme-name">ホタルイカ</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:39%; background:#2d7a7a;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:39%; background:#41b4b1;"></span></span>
             <span class="theme-count">7件 / 7.9%</span>
           </li>
           
           <li>
             <span class="theme-name">ブリ・寒ブリ</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:33%; background:#2d7a7a;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:33%; background:#41b4b1;"></span></span>
             <span class="theme-count">6件 / 6.7%</span>
           </li>
           
           <li>
             <span class="theme-name">バイ貝・海産物</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:17%; background:#2d7a7a;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:17%; background:#41b4b1;"></span></span>
             <span class="theme-count">3件 / 3.4%</span>
           </li>
           
         </ul>
       </div>
       <div>
-        <div class="quotes" style="border-left-color:#2d7a7a;">
-          <div class="quotes-title" style="color:#2d7a7a;">声の抜粋</div>
+        <div class="quotes" style="border-left-color:#41b4b1;">
+          <div class="quotes-title" style="color:#41b4b1;">声の抜粋</div>
           <ul>
             
             <li>チューリップフェアの移動販売ののイチゴのフローズンかき氷が</li>
@@ -3074,46 +3079,46 @@
       <div class="age-row-label">
         <div class="age-row-title">子連れ(小〜高生)</div>
         <div class="age-row-n">n = 146</div>
-        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:19%; background:#5fa8a8;"></div></div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:19%; background:#7dd1cf;"></div></div>
       </div>
       <div>
         <ul class="theme-list">
           
           <li>
             <span class="theme-name">寿司・刺身</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#5fa8a8;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#7dd1cf;"></span></span>
             <span class="theme-count">31件 / 21.2%</span>
           </li>
           
           <li>
             <span class="theme-name">ホタルイカ</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:75%; background:#5fa8a8;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:75%; background:#7dd1cf;"></span></span>
             <span class="theme-count">23件 / 15.8%</span>
           </li>
           
           <li>
             <span class="theme-name">白えび</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:35%; background:#5fa8a8;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:35%; background:#7dd1cf;"></span></span>
             <span class="theme-count">11件 / 7.5%</span>
           </li>
           
           <li>
             <span class="theme-name">ます寿司</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:16%; background:#5fa8a8;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:16%; background:#7dd1cf;"></span></span>
             <span class="theme-count">5件 / 3.4%</span>
           </li>
           
           <li>
             <span class="theme-name">富山ブラック・ラーメン</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:16%; background:#5fa8a8;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:16%; background:#7dd1cf;"></span></span>
             <span class="theme-count">5件 / 3.4%</span>
           </li>
           
         </ul>
       </div>
       <div>
-        <div class="quotes" style="border-left-color:#5fa8a8;">
-          <div class="quotes-title" style="color:#5fa8a8;">声の抜粋</div>
+        <div class="quotes" style="border-left-color:#7dd1cf;">
+          <div class="quotes-title" style="color:#7dd1cf;">声の抜粋</div>
           <ul>
             
             <li>かに。お寿司でも釜飯でも、酢の物、お刺身でもなにをとっても美味しかった。</li>
@@ -3218,46 +3223,46 @@
       <div class="age-row-label">
         <div class="age-row-title">夫婦</div>
         <div class="age-row-n">n = 760</div>
-        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:100%; background:#0e3550;"></div></div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:100%; background:#161e5c;"></div></div>
       </div>
       <div>
         <ul class="theme-list">
           
           <li>
             <span class="theme-name">公共交通の本数・接続</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#0e3550;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#161e5c;"></span></span>
             <span class="theme-count">33件 / 4.3%</span>
           </li>
           
           <li>
             <span class="theme-name">駐車場</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:88%; background:#0e3550;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:88%; background:#161e5c;"></span></span>
             <span class="theme-count">29件 / 3.8%</span>
           </li>
           
           <li>
             <span class="theme-name">混雑・渋滞</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:79%; background:#0e3550;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:79%; background:#161e5c;"></span></span>
             <span class="theme-count">26件 / 3.4%</span>
           </li>
           
           <li>
             <span class="theme-name">気候・服装</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:77%; background:#0e3550;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:77%; background:#161e5c;"></span></span>
             <span class="theme-count">25件 / 3.3%</span>
           </li>
           
           <li>
             <span class="theme-name">飲食店の確保・予約</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:67%; background:#0e3550;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:67%; background:#161e5c;"></span></span>
             <span class="theme-count">22件 / 2.9%</span>
           </li>
           
         </ul>
       </div>
       <div>
-        <div class="quotes" style="border-left-color:#0e3550;">
-          <div class="quotes-title" style="color:#0e3550;">声の抜粋</div>
+        <div class="quotes" style="border-left-color:#161e5c;">
+          <div class="quotes-title" style="color:#161e5c;">声の抜粋</div>
           <ul>
             
             <li>チューリップ公園の休園日程がホームページに載ったのが出発の４日前だったので、旅行日程を変えられなかった。残念でした</li>
@@ -3280,46 +3285,46 @@
       <div class="age-row-label">
         <div class="age-row-title">ひとり</div>
         <div class="age-row-n">n = 234</div>
-        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:31%; background:#1d4e6f;"></div></div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:31%; background:#253394;"></div></div>
       </div>
       <div>
         <ul class="theme-list">
           
           <li>
             <span class="theme-name">公共交通の本数・接続</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#1d4e6f;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#253394;"></span></span>
             <span class="theme-count">18件 / 7.7%</span>
           </li>
           
           <li>
             <span class="theme-name">飲食店の確保・予約</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:66%; background:#1d4e6f;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:66%; background:#253394;"></span></span>
             <span class="theme-count">12件 / 5.1%</span>
           </li>
           
           <li>
             <span class="theme-name">混雑・渋滞</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:49%; background:#1d4e6f;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:49%; background:#253394;"></span></span>
             <span class="theme-count">9件 / 3.8%</span>
           </li>
           
           <li>
             <span class="theme-name">宿泊施設</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:34%; background:#1d4e6f;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:34%; background:#253394;"></span></span>
             <span class="theme-count">6件 / 2.6%</span>
           </li>
           
           <li>
             <span class="theme-name">観光案内・情報不足</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:22%; background:#1d4e6f;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:22%; background:#253394;"></span></span>
             <span class="theme-count">4件 / 1.7%</span>
           </li>
           
         </ul>
       </div>
       <div>
-        <div class="quotes" style="border-left-color:#1d4e6f;">
-          <div class="quotes-title" style="color:#1d4e6f;">声の抜粋</div>
+        <div class="quotes" style="border-left-color:#253394;">
+          <div class="quotes-title" style="color:#253394;">声の抜粋</div>
           <ul>
             
             <li>新幹線の　乗り換えが　とても不安！一度 乗れなかったです。</li>
@@ -3342,46 +3347,46 @@
       <div class="age-row-label">
         <div class="age-row-title">大人の家族</div>
         <div class="age-row-n">n = 380</div>
-        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:50%; background:#3a7194;"></div></div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:50%; background:#4d5dbf;"></div></div>
       </div>
       <div>
         <ul class="theme-list">
           
           <li>
             <span class="theme-name">公共交通の本数・接続</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#3a7194;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#4d5dbf;"></span></span>
             <span class="theme-count">21件 / 5.5%</span>
           </li>
           
           <li>
             <span class="theme-name">駐車場</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:76%; background:#3a7194;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:76%; background:#4d5dbf;"></span></span>
             <span class="theme-count">16件 / 4.2%</span>
           </li>
           
           <li>
             <span class="theme-name">混雑・渋滞</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:62%; background:#3a7194;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:62%; background:#4d5dbf;"></span></span>
             <span class="theme-count">13件 / 3.4%</span>
           </li>
           
           <li>
             <span class="theme-name">気候・服装</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:62%; background:#3a7194;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:62%; background:#4d5dbf;"></span></span>
             <span class="theme-count">13件 / 3.4%</span>
           </li>
           
           <li>
             <span class="theme-name">飲食店の確保・予約</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:58%; background:#3a7194;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:58%; background:#4d5dbf;"></span></span>
             <span class="theme-count">12件 / 3.2%</span>
           </li>
           
         </ul>
       </div>
       <div>
-        <div class="quotes" style="border-left-color:#3a7194;">
-          <div class="quotes-title" style="color:#3a7194;">声の抜粋</div>
+        <div class="quotes" style="border-left-color:#4d5dbf;">
+          <div class="quotes-title" style="color:#4d5dbf;">声の抜粋</div>
           <ul>
             
             <li>市電があり、道路が狭いので、レンタカーでは移動がし難いと感じました。また、富山駅はレンタカーを借りて、高齢の同乗者を拾いたくても、北口など進入禁止で不便でした。土地勘がないから、どこで歩きに不安がある高齢者を乗せられるのかわからなかった。</li>
@@ -3404,46 +3409,46 @@
       <div class="age-row-label">
         <div class="age-row-title">友人・知人</div>
         <div class="age-row-n">n = 178</div>
-        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:23%; background:#1a5454;"></div></div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:23%; background:#237371;"></div></div>
       </div>
       <div>
         <ul class="theme-list">
           
           <li>
             <span class="theme-name">公共交通の本数・接続</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#1a5454;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#237371;"></span></span>
             <span class="theme-count">16件 / 9.0%</span>
           </li>
           
           <li>
             <span class="theme-name">気候・服装</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:50%; background:#1a5454;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:50%; background:#237371;"></span></span>
             <span class="theme-count">8件 / 4.5%</span>
           </li>
           
           <li>
             <span class="theme-name">駐車場</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:38%; background:#1a5454;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:38%; background:#237371;"></span></span>
             <span class="theme-count">6件 / 3.4%</span>
           </li>
           
           <li>
             <span class="theme-name">宿泊施設</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:24%; background:#1a5454;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:24%; background:#237371;"></span></span>
             <span class="theme-count">4件 / 2.2%</span>
           </li>
           
           <li>
             <span class="theme-name">案内表示・標識</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:24%; background:#1a5454;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:24%; background:#237371;"></span></span>
             <span class="theme-count">4件 / 2.2%</span>
           </li>
           
         </ul>
       </div>
       <div>
-        <div class="quotes" style="border-left-color:#1a5454;">
-          <div class="quotes-title" style="color:#1a5454;">声の抜粋</div>
+        <div class="quotes" style="border-left-color:#237371;">
+          <div class="quotes-title" style="color:#237371;">声の抜粋</div>
           <ul>
             
             <li>高山本線の一部が不通　在来線と新幹線は乗り換えがある</li>
@@ -3466,46 +3471,46 @@
       <div class="age-row-label">
         <div class="age-row-title">子連れ(未就学児)</div>
         <div class="age-row-n">n = 89</div>
-        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:12%; background:#2d7a7a;"></div></div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:12%; background:#41b4b1;"></div></div>
       </div>
       <div>
         <ul class="theme-list">
           
           <li>
             <span class="theme-name">公共交通の本数・接続</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#2d7a7a;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#41b4b1;"></span></span>
             <span class="theme-count">5件 / 5.6%</span>
           </li>
           
           <li>
             <span class="theme-name">マイカー以外での移動困難</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:61%; background:#2d7a7a;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:61%; background:#41b4b1;"></span></span>
             <span class="theme-count">3件 / 3.4%</span>
           </li>
           
           <li>
             <span class="theme-name">飲食店の確保・予約</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:61%; background:#2d7a7a;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:61%; background:#41b4b1;"></span></span>
             <span class="theme-count">3件 / 3.4%</span>
           </li>
           
           <li>
             <span class="theme-name">トイレ・休憩施設</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:61%; background:#2d7a7a;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:61%; background:#41b4b1;"></span></span>
             <span class="theme-count">3件 / 3.4%</span>
           </li>
           
           <li>
             <span class="theme-name">混雑・渋滞</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:39%; background:#2d7a7a;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:39%; background:#41b4b1;"></span></span>
             <span class="theme-count">2件 / 2.2%</span>
           </li>
           
         </ul>
       </div>
       <div>
-        <div class="quotes" style="border-left-color:#2d7a7a;">
-          <div class="quotes-title" style="color:#2d7a7a;">声の抜粋</div>
+        <div class="quotes" style="border-left-color:#41b4b1;">
+          <div class="quotes-title" style="color:#41b4b1;">声の抜粋</div>
           <ul>
             
             <li>米騒動発祥の地に行きましたが、駐車場があるのかわからなくて、困りました。</li>
@@ -3528,46 +3533,46 @@
       <div class="age-row-label">
         <div class="age-row-title">子連れ(小〜高生)</div>
         <div class="age-row-n">n = 146</div>
-        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:19%; background:#5fa8a8;"></div></div>
+        <div class="age-row-bar"><div class="age-row-bar-fill" style="width:19%; background:#7dd1cf;"></div></div>
       </div>
       <div>
         <ul class="theme-list">
           
           <li>
             <span class="theme-name">混雑・渋滞</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#5fa8a8;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#7dd1cf;"></span></span>
             <span class="theme-count">9件 / 6.2%</span>
           </li>
           
           <li>
             <span class="theme-name">公共交通の本数・接続</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#5fa8a8;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:100%; background:#7dd1cf;"></span></span>
             <span class="theme-count">9件 / 6.2%</span>
           </li>
           
           <li>
             <span class="theme-name">飲食店の確保・予約</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:77%; background:#5fa8a8;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:77%; background:#7dd1cf;"></span></span>
             <span class="theme-count">7件 / 4.8%</span>
           </li>
           
           <li>
             <span class="theme-name">駐車場</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:55%; background:#5fa8a8;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:55%; background:#7dd1cf;"></span></span>
             <span class="theme-count">5件 / 3.4%</span>
           </li>
           
           <li>
             <span class="theme-name">マイカー以外での移動困難</span>
-            <span class="theme-bar"><span class="theme-bar-fill" style="width:34%; background:#5fa8a8;"></span></span>
+            <span class="theme-bar"><span class="theme-bar-fill" style="width:34%; background:#7dd1cf;"></span></span>
             <span class="theme-count">3件 / 2.1%</span>
           </li>
           
         </ul>
       </div>
       <div>
-        <div class="quotes" style="border-left-color:#5fa8a8;">
-          <div class="quotes-title" style="color:#5fa8a8;">声の抜粋</div>
+        <div class="quotes" style="border-left-color:#7dd1cf;">
+          <div class="quotes-title" style="color:#7dd1cf;">声の抜粋</div>
           <ul>
             
             <li>交通手段が複雑に感じた。親切に教えていただけたが 電車に乗るときに特に複雑に思えた。</li>
@@ -3717,9 +3722,9 @@ Chart.defaults.plugins.legend.labels.boxWidth = 12;
 Chart.defaults.plugins.legend.labels.padding = 14;
 
 const colors = {
-  ink: '#0d1b2a', primary: '#1d4e6f', primaryDeep: '#0e3550',
-  primarySoft: '#3a7194', teal: '#2d7a7a', tealDeep: '#1a5454',
-  tealSoft: '#5fa8a8', tealMist: '#b8d8d8', gold: '#b08840',
+  ink: '#0d1b2a', primary: '#253394', primaryDeep: '#161e5c',
+  primarySoft: '#4d5dbf', teal: '#41b4b1', tealDeep: '#237371',
+  tealSoft: '#7dd1cf', tealMist: '#c0ebec', gold: '#b08840',
   warn: '#c0563c', rule: '#c9d6db'
 };
 const palette = [colors.primary, colors.teal, colors.primarySoft, colors.tealSoft,
